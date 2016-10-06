@@ -3,16 +3,16 @@
  */
 
 var driver;
-var webdriver = require("selenium-webdriver");
-
+var webdriverio = require('webdriverio');
 
 /*
  * @desc build driver if driver is not yet set
  * */
+
 function GetDriver() {
 
-        driver = buildDriver();
-        return driver;
+    driver = buildDriver();
+    return driver;
 }
 
 /*
@@ -25,28 +25,27 @@ function GetDriver() {
 
 var buildDriver = function () {
 
-    if (process.env.SAUCE_USERNAME != undefined) {
-        console.log("suace user name defined");
-        driver = new webdriver.Builder()
-            .usingServer('http://' + process.env.SAUCE_USERNAME + ':' + process.env.SAUCE_ACCESS_KEY + '@ondemand.saucelabs.com:80/wd/hub')
-            .withCapabilities({
-                'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-                build: process.env.TRAVIS_BUILD_NUMBER,
-                username: process.env.SAUCE_USERNAME,
-                accessKey: process.env.SAUCE_ACCESS_KEY,
-                browserName: "chrome"
-            }).build();
+    var options = {
+        desiredCapabilities: {
+            browserName: 'chrome',
+            version: '27.0',
+            platform: 'XP',
+            'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+            name: 'integration',
+            build: process.env.TRAVIS_BUILD_NUMBER
+        }
+    };
 
-        return driver;
+    webdriverio
+        .remote(options)
+        .init()
+        .url('http://www.google.com')
+        .getTitle().then(function(title) {
+        console.log('Title was: ' + title);
+    })
+        .end();
 
-    } else {
-        driver = new webdriver.Builder()
-            .withCapabilities({
-                browserName: "chrome"
-            }).build();
-
-        return driver;
-    }
+    //return driver;
 
 };
 
