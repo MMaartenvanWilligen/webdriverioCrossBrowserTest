@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "travis integration with github and node",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha test/ -name '*-test.js' --timeout 10000"
-  },
+//  "scripts": {
+//    "test": "mocha test/ -name '*-test.js' --timeout 10000"
+//  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaartenvanWilligenCH/travisporjecttest.git"
