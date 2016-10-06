@@ -97,7 +97,7 @@ var webdriverio = require('../../build/index'),
             // Also see https://support.saucelabs.com/customer/portal/articles/2005331-why-do-my-tests-say-%22finished%22-instead-of-%22passed%22-or-%22failed%22-how-do-i-set-the-status-
             'public': true
         },
-        host: 'ondemand.saucelabs.com',
+        host: 'http://' + process.env.SAUCE_USERNAME + ':' + process.env.SAUCE_ACCESS_KEY + '@ondemand.saucelabs.com:80/wd/hub',
         port: 80,
         user: process.env.SAUCE_USERNAME,
         key: process.env.SAUCE_ACCESS_KEY,
