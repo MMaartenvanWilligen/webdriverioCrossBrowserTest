@@ -124,4 +124,3 @@
 //
 // });
 
-require("./driver").GetDriver();
