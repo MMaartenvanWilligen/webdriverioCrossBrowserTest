@@ -47,37 +47,37 @@ describe("functional testing in real browser", function () {
             });
         });
 
-        it("The title is 'demo website'", function () {
-            // Since we want the title from the page, we need to manually handle the Promise
-            return driver.getTitle().then(function (title) {
-                assert.equal(title, "Home Page");
-            });
-        });
-
-        it("CTA button should have text raised", function () {
-            return homepage.ctaButton().then(function (elm) {
-                elm.getText().then(function (txt) {
-                    assert.equal(txt, "RAISED");
-                });
-            });
-        });
-
-        it("Expect onclick text change to buttontransform", function () {
-            return homepage.ctaButtonClick().then(function (elm) {
-                elm.getText().then(function (txt) {
-                    assert.equal(txt, "BUTTONTRANSFORM");
-                });
-            });
-        });
+        // it("The title is 'demo website'", function () {
+        //     // Since we want the title from the page, we need to manually handle the Promise
+        //     return driver.getTitle().then(function (title) {
+        //         assert.equal(title, "Home Page");
+        //     });
+        // });
+        //
+        // it("CTA button should have text raised", function () {
+        //     return homepage.ctaButton().then(function (elm) {
+        //         elm.getText().then(function (txt) {
+        //             assert.equal(txt, "RAISED");
+        //         });
+        //     });
+        // });
+        //
+        // it("Expect onclick text change to buttontransform", function () {
+        //     return homepage.ctaButtonClick().then(function (elm) {
+        //         elm.getText().then(function (txt) {
+        //             assert.equal(txt, "BUTTONTRANSFORM");
+        //         });
+        //     });
+        // });
     });
 
     /*
      * @desc mocha after, quit driver
      * */
 
-    after(function () {
-        return driver.quit();
-    });
+    // after(function () {
+    //     return driver.quit();
+    // });
 });
 
 // var webdriverio = require('webdriverio'),
