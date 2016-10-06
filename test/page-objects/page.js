@@ -6,15 +6,15 @@ var webdriver = require("selenium-webdriver");
 var until = webdriver.until;
 
 var driver;
-var url;
+var urllocal;
 
 /*constructor
  * sets driver and url
  * */
 
-function Page(driver, url) {
+function Page(driver, urllocal) {
 
-    this.url = url;
+    this.urllocal = urllocal;
     this.driver = driver;
 }
 
@@ -25,7 +25,7 @@ function Page(driver, url) {
 
 Page.prototype.getUrl = function () {
 
-    this.driver.get(this.url);
+    this.driver.url(this.urllocal);
     return webdriver.promise.fulfilled(true);
 
 };
