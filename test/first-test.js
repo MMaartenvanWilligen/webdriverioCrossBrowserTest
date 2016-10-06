@@ -83,14 +83,12 @@
 var webdriverio = require('webdriverio');
 var options = {
     desiredCapabilities: {
-        browserName: 'chrome',
-        version: '27.0',
-        platform: 'XP',
+        path: 'http://' + process.env.SAUCE_USERNAME + ':' + process.env.SAUCE_ACCESS_KEY + '@ondemand.saucelabs.com:80/wd/hub',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-        name: 'integration',
         build: process.env.TRAVIS_BUILD_NUMBER,
         username: process.env.SAUCE_USERNAME,
-        accessKey: process.env.SAUCE_ACCESS_KEY
+        accessKey: process.env.SAUCE_ACCESS_KEY,
+        browserName: 'chrome'
     }
 };
 
@@ -104,3 +102,4 @@ it("Expect", function () {
     })
         .end();
 });
+
