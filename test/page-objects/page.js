@@ -26,7 +26,7 @@ function Page(driver, urllocal) {
 Page.prototype.getUrl = function () {
 
     this.driver.url(this.urllocal);
-    console.log("geturl");
+    console.log("nsvigste to url");
     return webdriver.promise.fulfilled(true);
 
 };
