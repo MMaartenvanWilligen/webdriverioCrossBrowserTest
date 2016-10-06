@@ -26,6 +26,7 @@ function Page(driver, urllocal) {
 Page.prototype.getUrl = function () {
 
     this.driver.url(this.urllocal);
+    console.log("geturl");
     return webdriver.promise.fulfilled(true);
 
 };
