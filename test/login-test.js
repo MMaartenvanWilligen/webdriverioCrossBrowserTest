@@ -25,6 +25,7 @@ describe("functional testing in real browser", function () {
      * */
 
     before(function (done) {
+        console.log("before");
         driver = require("./driver").GetDriver();
         done();
         loginpage = new Login(driver);
