@@ -88,6 +88,9 @@ var webdriverio = require('webdriverio'),
             platform: 'XP',
             tags: ['examples'],
             name: 'This is an example test',
+            'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+            build: process.env.TRAVIS_BUILD_NUMBER,
+
 
             // If using Open Sauce (https://saucelabs.com/opensauce/),
             // capabilities must be tagged as "public" for the jobs's status
@@ -105,9 +108,7 @@ var webdriverio = require('webdriverio'),
     }).init();
 
 client
-    .url('http://google.com')
-    .setValue('*[name="q"]','webdriverio')
-    .click('*[name="btnG"]')
+    .url('http://localhost:8000/website/index.html')
     .pause(1000)
     .getTitle(function(err,title) {
         console.log(title);
