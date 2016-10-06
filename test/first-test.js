@@ -80,26 +80,36 @@
 //     });
 // });
 
-var webdriverio = require('webdriverio');
-var options = {
-    desiredCapabilities: {
-       // path: 'http://' + process.env.SAUCE_USERNAME + ':' + process.env.SAUCE_ACCESS_KEY + '@ondemand.saucelabs.com:80/wd/hub',
-        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-        build: process.env.TRAVIS_BUILD_NUMBER,
-        username: process.env.SAUCE_USERNAME,
-        accessKey: process.env.SAUCE_ACCESS_KEY,
-        browserName: 'chrome'
-    }
-};
+var webdriverio = require('../../build/index'),
+    client = webdriverio.remote({
+        desiredCapabilities: {
+            browserName: 'chrome',
+            version: '27',
+            platform: 'XP',
+            tags: ['examples'],
+            name: 'This is an example test',
 
-it("Expect", function () {
-    webdriverio
-        .remote(options)
-        .init()
-        .url('http://www.google.com')
-        .getTitle().then(function (title) {
-        console.log('Title was: ' + title);
+            // If using Open Sauce (https://saucelabs.com/opensauce/),
+            // capabilities must be tagged as "public" for the jobs's status
+            // to update (failed/passed). If omitted on Open Sauce, the job's
+            // status will only be marked "Finished." This property can be
+            // be omitted for commerical (private) Sauce Labs accounts.
+            // Also see https://support.saucelabs.com/customer/portal/articles/2005331-why-do-my-tests-say-%22finished%22-instead-of-%22passed%22-or-%22failed%22-how-do-i-set-the-status-
+            'public': true
+        },
+        host: 'ondemand.saucelabs.com',
+        port: 80,
+        user: process.env.SAUCE_USERNAME,
+        key: process.env.SAUCE_ACCESS_KEY,
+        logLevel: 'silent'
+    }).init();
+
+client
+    .url('http://google.com')
+    .setValue('*[name="q"]','webdriverio')
+    .click('*[name="btnG"]')
+    .pause(1000)
+    .getTitle(function(err,title) {
+        console.log(title);
     })
-        .end();
-});
-
+    .end();
