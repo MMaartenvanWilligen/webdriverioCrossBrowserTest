@@ -80,7 +80,7 @@
 //     });
 // });
 
-var webdriverio = require('../../build/index'),
+var webdriverio = require('webdriverio'),
     client = webdriverio.remote({
         desiredCapabilities: {
             browserName: 'chrome',
