@@ -88,7 +88,9 @@ var options = {
         platform: 'XP',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         name: 'integration',
-        build: process.env.TRAVIS_BUILD_NUMBER
+        build: process.env.TRAVIS_BUILD_NUMBER,
+        username: process.env.SAUCE_USERNAME,
+        accessKey: process.env.SAUCE_ACCESS_KEY
     }
 };
 
