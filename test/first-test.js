@@ -56,7 +56,7 @@ describe("functional testing in real browser", function () {
 
         it("CTA button should have text raised", function () {
             return homepage.ctaButton().then(function (elm) {
-                elm.getText().then(function (txt) {
+                elm.getText(elm).then(function (txt) {
                     assert.equal(txt, "RAISED");
                 });
             });
@@ -64,7 +64,7 @@ describe("functional testing in real browser", function () {
 
         it("Expect onclick text change to buttontransform", function () {
             return homepage.ctaButtonClick().then(function (elm) {
-                elm.getText().then(function (txt) {
+                elm.getText(elm).then(function (txt) {
                     assert.equal(txt, "BUTTONTRANSFORM");
                 });
             });
