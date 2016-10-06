@@ -79,6 +79,7 @@
 //         return driver.quit();
 //     });
 // });
+
 var webdriverio = require('webdriverio');
 var options = {
     desiredCapabilities: {
@@ -91,12 +92,13 @@ var options = {
     }
 };
 
-webdriverio
-    .remote(options)
-    .init()
-    .url('http://www.google.com')
-    .getTitle().then(function(title) {
-    console.log('Title was: ' + title);
-})
-    .end();
-
+it("Expect", function () {
+    webdriverio
+        .remote(options)
+        .init()
+        .url('http://www.google.com')
+        .getTitle().then(function (title) {
+        console.log('Title was: ' + title);
+    })
+        .end();
+});
