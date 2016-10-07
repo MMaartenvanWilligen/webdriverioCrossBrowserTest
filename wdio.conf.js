@@ -4,7 +4,7 @@ exports.config = {
      * specify test files
      */
     specs: [
-        './test/first-test.js'
+        'mocha ./test/first-test.js'
     ],
 
     /**
@@ -25,7 +25,6 @@ exports.config = {
     coloredLogs: true,
     screenshotPath: 'screenshots',
     waitforTimeout: 10000,
-    framework: 'mocha',
     services: ['sauce'],
     user: process.env.SAUCE_USERNAME,
     key: process.env.SAUCE_ACCESS_KEY,
@@ -33,9 +32,6 @@ exports.config = {
     reporters: ['dot'],
     reporterOptions: {
         outputDir: './'
-    },
-    mochaOpts: {
-        ui: 'bdd'
     },
     onPrepare: function() {
         // do something
