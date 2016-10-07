@@ -1,13 +1,6 @@
 exports.config = {
 
     /**
-     * specify test files
-     */
-    specs: [
-        './test/first-test.js'
-    ],
-
-    /**
      * capabilities
      */
     capabilities: [{
@@ -19,7 +12,6 @@ exports.config = {
         version: 'latest',
         platform: "windows 10"
     }],
-
     /**
      * test configurations
      */
@@ -34,6 +26,7 @@ exports.config = {
     build: process.env.TRAVIS_BUILD_NUMBER,
     sauceConnect: true,
     reporters: ['dot'],
+    port: 4445,
     framework: 'mocha',
     mochaOpts: {
         ui: 'bdd'
@@ -41,6 +34,12 @@ exports.config = {
     reporterOptions: {
         outputDir: './'
     },
+    /**
+     * specify test files
+     */
+    specs: [
+        './test/first-test.js'
+    ],
     onPrepare: function() {
         // do something
     },
@@ -53,5 +52,5 @@ exports.config = {
     onComplete: function() {
         // do something
     }
-
 };
+
