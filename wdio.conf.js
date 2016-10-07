@@ -28,8 +28,8 @@ exports.config = {
      * test configurations
      */
 
-    user: "Maaktnietzoveeluit",
-    key: "519926b3-9bcf-4500-9725-eb09b0a50d5d",
+    user: process.env.SAUCE_USERNAME,
+    key: process.env.SAUCE_ACCESS_KEY,
     logLevel: 'silent',
     coloredLogs: true,
     screenshotPath: 'screenshots',
