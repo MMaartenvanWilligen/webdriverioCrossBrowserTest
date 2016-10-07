@@ -15,18 +15,14 @@ exports.config = {
     /**
      * test configurations
      */
+    services: ['sauce'],
+    user: "Maaktnietzoveeluit",
+    key: "519926b3-9bcf-4500-9725-eb09b0a50d5d",
+    sauceConnect: true,
     logLevel: 'silent',
     coloredLogs: true,
     screenshotPath: 'screenshots',
     waitforTimeout: 10000,
-    user: process.env.SAUCE_USERNAME,
-    key: process.env.SAUCE_ACCESS_KEY,
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    build: process.env.TRAVIS_BUILD_NUMBER,
-    host: 'ondemand.saucelabs.com',
-    'public': true,
-    name: 'This is an example test',
-    port: 80,
     reporters: ['dot'],
     framework: 'mocha',
     mochaOpts: {
@@ -40,18 +36,6 @@ exports.config = {
      */
     specs: [
         './test/first-test.js'
-    ],
-    onPrepare: function() {
-        // do something
-    },
-    before: function() {
-        // do something
-    },
-    after: function(failures, pid) {
-        // do something
-    },
-    onComplete: function() {
-        // do something
-    }
+    ]
 };
 
