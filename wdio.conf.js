@@ -32,6 +32,10 @@ exports.config = {
     build: process.env.TRAVIS_BUILD_NUMBER,
     sauceConnect: true,
     reporters: ['dot'],
+    framework: 'mocha',
+    mochaOpts: {
+        ui: 'bdd'
+    },
     reporterOptions: {
         outputDir: './'
     },
