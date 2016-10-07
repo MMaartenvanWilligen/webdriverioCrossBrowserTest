@@ -81,11 +81,16 @@
 // });
 
 // var webdriverio = require('webdriverio'),
-//     client = browser.remote({
+//     client = webdriverio.remote({
 //         desiredCapabilities: {
+//             browserName: 'chrome',
+//             version: '27',
+//             platform: 'XP',
+//             tags: ['examples'],
 //             name: 'This is an example test',
 //             'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
 //             build: process.env.TRAVIS_BUILD_NUMBER,
+//
 //
 //             // If using Open Sauce (https://saucelabs.com/opensauce/),
 //             // capabilities must be tagged as "public" for the jobs's status
@@ -101,11 +106,13 @@
 //         key: process.env.SAUCE_ACCESS_KEY,
 //         logLevel: 'silent'
 //     }).init();
+//
+
 
 browser
-    .init()
     .url('http://localhost:4445/webdriverioProject/website/index.html')
-    .getTitle().then(console.log)
-    .end();
-
+    .pause(10000)
+    .getTitle(function(err,title) {
+        console.log(title);
+    });
 
