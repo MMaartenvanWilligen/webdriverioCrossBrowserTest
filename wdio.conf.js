@@ -15,10 +15,12 @@ exports.config = {
     /**
      * test configurations
      */
+    services: ['sauce'],
     user: "Maaktnietzoveeluit",
     key: "519926b3-9bcf-4500-9725-eb09b0a50d5d",
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     build: process.env.TRAVIS_BUILD_NUMBER,
+    sauceConnect: false,
     logLevel: 'silent',
     coloredLogs: true,
     screenshotPath: 'screenshots',
