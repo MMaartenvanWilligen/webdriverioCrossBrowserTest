@@ -109,7 +109,7 @@
 //
 browser
     .url('http://localhost:4445/website/index.html')
-    .pause(1000)
+    .pause(3000)
     .getTitle(function(err,title) {
         console.log(title);
     })
