@@ -110,7 +110,7 @@
 
 
 browser
-    .url('http://localhost:4445/website/index.html')
+    .url('http://localhost:4445/webdriverioProject/website/index.html')
     .pause(10000)
     .getTitle(function(err,title) {
         console.log(title);
