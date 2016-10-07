@@ -109,10 +109,15 @@
 //
 
 
-browser
-    .url('http://localhost:4445/webdriverioProject/website/index.html')
-    .pause(10000)
-    .getTitle(function(err,title) {
-        console.log(title);
-    });
+it("Expect onclick text change to buttontransform", function (done) {
+    browser
+        .url('http://localhost:4445/webdriverioProject/website/index.html')
+        .pause(10000)
+        .getTitle(function(err,title) {
+            console.log(title);
+            done();
+        });
+
+
+});
 

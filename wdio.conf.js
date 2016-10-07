@@ -13,7 +13,7 @@ exports.config = {
         tags: ['examples'],
         name: 'This is an example test',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-        build: process.env.TRAVIS_BUILD_NUMBER,
+        build: process.env.TRAVIS_BUILD_NUMBER
     }, {
         browserName: "firefox",
         version: 'latest',
@@ -21,7 +21,7 @@ exports.config = {
         tags: ['examples'],
         name: 'This is an example test',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-        build: process.env.TRAVIS_BUILD_NUMBER,
+        build: process.env.TRAVIS_BUILD_NUMBER
     }],
     /**
      * test configurations
