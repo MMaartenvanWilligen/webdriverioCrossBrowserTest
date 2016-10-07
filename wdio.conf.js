@@ -32,7 +32,7 @@ exports.config = {
     key: process.env.SAUCE_ACCESS_KEY,
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     build: process.env.TRAVIS_BUILD_NUMBER,
-    sauceConnect: false,
+    sauceConnect: true,
     reporters: ['dot'],
     framework: 'mocha',
     mochaOpts: {
