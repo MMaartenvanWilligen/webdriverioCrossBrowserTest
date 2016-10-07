@@ -3,9 +3,9 @@
  */
 
 /*
-* @desc page object homepage
-*
-* */
+ * @desc page object homepage
+ *
+ * */
 
 var webdriver = require("selenium-webdriver");
 var Page = require("./page");
@@ -41,7 +41,7 @@ Home.prototype.constructor = Home;
 
 Home.prototype.ctaButton = function () {
     var d = webdriver.promise.defer();
-    this.driver.elements("#ctaButton").then(function (elm) {
+    this.driver.element("#ctaButton").then(function (elm) {
         d.fulfill(elm);
     });
     return d.promise;
@@ -54,13 +54,12 @@ Home.prototype.ctaButton = function () {
 Home.prototype.ctaButtonClick = function () {
 
     var d = webdriver.promise.defer();
-    this.ctaButton().then(function (elm) {
-        elm.click();
+    this.driver.click(this.ctaButton()).then(function () {
         d.fulfill(elm);
     });
+
     return d.promise;
 };
-
 
 
 /*
