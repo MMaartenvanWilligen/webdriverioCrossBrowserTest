@@ -5,7 +5,6 @@ exports.config = {
      */
 
     commonCapabilities: {
-        name: 'parallel_test',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         build: process.env.TRAVIS_BUILD_NUMBER
     },
@@ -15,7 +14,9 @@ exports.config = {
         version: 'latest',
         platform: "windows 10",
         tags: ['examples'],
-        name: 'chrome test'
+        name: 'chrome test',
+        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+        build: process.env.TRAVIS_BUILD_NUMBER
     }, {
         browserName: "firefox",
         version: 'latest',
