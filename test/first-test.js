@@ -112,7 +112,7 @@ describe("functional testing in real browser", function () {
 
     it("Expect onclick text change to buttontransform", function (done) {
         browser
-            .url('http://google.com')
+            .url('http://localhost:4445/webdriverioProject/website/index.html')
             .setValue('*[name="q"]','webdriverio')
             .click('*[name="btnG"]')
             .pause(1000)
