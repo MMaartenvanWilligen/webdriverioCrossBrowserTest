@@ -23,6 +23,7 @@ exports.config = {
     key: process.env.SAUCE_ACCESS_KEY,
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     build: process.env.TRAVIS_BUILD_NUMBER,
+    host: 'ondemand.saucelabs.com',
     'public': true,
     name: 'This is an example test',
     port: 80,
