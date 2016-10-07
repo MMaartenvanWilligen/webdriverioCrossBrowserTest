@@ -12,10 +12,12 @@ exports.config = {
      */
     capabilities: [{
         browserName: 'chrome',
-        version: 'latest'
+        version: 'latest',
+        platform: "windows 10"
     }, {
         browserName: "firefox",
-        version: 'latest'
+        version: 'latest',
+        platform: "windows 10"
     }],
 
     /**
@@ -30,7 +32,7 @@ exports.config = {
     key: process.env.SAUCE_ACCESS_KEY,
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     build: process.env.TRAVIS_BUILD_NUMBER,
-    sauceConnect: true,
+    sauceConnect: false,
     reporters: ['dot'],
     framework: 'mocha',
     mochaOpts: {
