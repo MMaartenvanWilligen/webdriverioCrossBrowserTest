@@ -1,27 +1,27 @@
-var BUILD_ID = process.env.TRAVIS_BUILD_ID || new Date().getTime();
-
-
 exports.config = {
 
     /**
      * capabilities
      */
+
+    commonCapabilities: {
+        name: 'parallel_test',
+        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+        build: process.env.TRAVIS_BUILD_NUMBER
+    },
+
     capabilities: [{
         browserName: 'chrome',
         version: 'latest',
         platform: "windows 10",
         tags: ['examples'],
-        name: 'This is an example test',
-        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-        build: process.env.TRAVIS_BUILD_NUMBER
+        name: 'chrome test'
     }, {
         browserName: "firefox",
         version: 'latest',
         platform: "windows 10",
         tags: ['examples'],
-        name: 'This is an example test',
-        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-        build: process.env.TRAVIS_BUILD_NUMBER
+        name: 'firefox test'
     }],
     /**
      * test configurations
