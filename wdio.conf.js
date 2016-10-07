@@ -38,7 +38,7 @@ exports.config = {
      * specify test files
      */
     specs: [
-        './test/first-test.js'
+        './test/first-test.js --timeout 10000'
     ],
     onPrepare: function() {
         // do something
