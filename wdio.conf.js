@@ -36,5 +36,18 @@ exports.config = {
     },
     mochaOpts: {
         ui: 'bdd'
+    },
+    onPrepare: function() {
+        // do something
+    },
+    before: function() {
+        // do something
+    },
+    after: function(failures, pid) {
+        // do something
+    },
+    onComplete: function() {
+        // do something
     }
+
 };
