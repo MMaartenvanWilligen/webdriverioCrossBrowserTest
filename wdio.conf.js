@@ -4,7 +4,7 @@ exports.config = {
      * specify test files
      */
     specs: [
-        'mocha test/first-test.js'
+        './test/first-test.js'
     ],
 
     /**
