@@ -46,9 +46,9 @@ var buildDriver = function () {
             // Also see https://support.saucelabs.com/customer/portal/articles/2005331-why-do-my-tests-say-%22finished%22-instead-of-%22passed%22-or-%22failed%22-how-do-i-set-the-status-
             'public': true
         },
-        host: 'ondemand.saucelabs.com',
-        user: process.env.SAUCE_USERNAME,
-        key: process.env.SAUCE_ACCESS_KEY,
+        // host: 'ondemand.saucelabs.com',
+        // user: process.env.SAUCE_USERNAME,
+        // key: process.env.SAUCE_ACCESS_KEY,
         port: 80,
         logLevel: 'silent'
     }).init();
