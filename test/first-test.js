@@ -108,15 +108,17 @@
 //     }).init();
 //
 
+describe("functional testing in real browser", function () {
 
-it("Expect onclick text change to buttontransform", function (done) {
-    browser
-        .url('http://localhost:4445/webdriverioProject/website/index.html')
-        .pause(10000).then(function () {
-        done();
-    })
+    it("Expect onclick text change to buttontransform", function (done) {
+        browser
+            .url('http://localhost:4445/webdriverioProject/website/index.html')
+            .pause(10000).then(function () {
+            done();
+        })
 
 
+    });
 
 });
 
