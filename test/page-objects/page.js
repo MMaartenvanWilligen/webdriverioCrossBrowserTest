@@ -23,10 +23,11 @@ function Page(urllocal) {
 
 Page.prototype.getUrl = function () {
 
-    browser.url(this.urllocal);
-    console.log("nsvigste to url");
-    return webdriver.promise.fulfilled(true);
-
+    var d = webdriver.promise.defer();
+    browser.url(this.urllocal).then(function (url) {
+        d.fulfill(url);
+    });
+    return d.promise;
 };
 
 Page.prototype.currentUrl = function () {

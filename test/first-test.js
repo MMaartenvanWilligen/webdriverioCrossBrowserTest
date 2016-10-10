@@ -10,14 +10,13 @@ var Home = require("./page-objects/homePage");
 
 var homepage;
 
-var assert = require("assert");
 describe('Home page', function () {
 
     it("should open the homepage", function () {
         homepage = new Home();
         return homepage.getUrl().then(function () {
             homepage.currentUrl().then(function (url) {
-                assert.equal(url, homepage.url);
+                assert.equal(url, homepage.urllocal);
             })
         });
     });
