@@ -34,18 +34,23 @@
 describe('Home page', function () {
 
     var client = require('webdriverio').remote({
-        user: process.env.SAUCE_USERNAME,
-        key: process.env.SAUCE_ACCESS_KEY,
-        host: 'ondemand.saucelabs.com',
-        port: 4445,
         desiredCapabilities: {
             browserName: 'chrome',
             version: 'latest',
             platform: 'Windows XP',
             tags: ['examples'],
             name: 'This is an example test',
-            'public': true
-        }
+            'public': true,
+            'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+            build: process.env.TRAVIS_BUILD_NUMBER
+
+
+        },
+        host: 'ondemand.saucelabs.com',
+        user: process.env.SAUCE_USERNAME,
+        key: process.env.SAUCE_ACCESS_KEY,
+        port: 80,
+        logLevel: 'silent'
     });
 
     it("The title is 'demo website'", function (done) {
