@@ -67,7 +67,6 @@ exports.config = {
                 resolve();
             });
         });
-
     }
 };
 

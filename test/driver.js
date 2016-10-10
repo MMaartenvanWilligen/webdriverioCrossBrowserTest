@@ -28,7 +28,7 @@ function GetDriver() {
 var buildDriver = function () {
 
     var driver = new webdriverio.remote({
-        desiredCapabilities: [{
+        desiredCapabilities: {
             browserName: 'chrome',
             version: 'latest',
             platform: 'XP',
@@ -37,17 +37,7 @@ var buildDriver = function () {
             'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
             build: process.env.TRAVIS_BUILD_NUMBER,
             'public': true
-        }, {
-            browserName: 'firefox',
-            version: 'latest',
-            platform: 'XP',
-            tags: ['examples'],
-            name: 'firefox remote',
-            'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-            build: process.env.TRAVIS_BUILD_NUMBER,
-            'public': true
-
-        }],
+        },
         // host: 'ondemand.saucelabs.com',
         // user: process.env.SAUCE_USERNAME,
         // key: process.env.SAUCE_ACCESS_KEY,
