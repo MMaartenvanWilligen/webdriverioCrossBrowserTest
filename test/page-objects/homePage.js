@@ -7,7 +7,6 @@
  *
  * */
 
-var webdriver = require("selenium-webdriver");
 var Page = require("./page");
 var until = webdriver.until;
 
@@ -16,11 +15,9 @@ var until = webdriver.until;
  * @param driver
  * */
 
-function Home(driver) {
+function Home() {
 
-    Page.call(this, driver, "http://localhost:8000/website/index.html");
-    console.log("driver" + " " + driver);
-
+    Page.call(this, "http://localhost:8000/website/index.html");
 }
 
 // subclass Homepage extends page
@@ -41,7 +38,7 @@ Home.prototype.constructor = Home;
 
 Home.prototype.ctaButton = function () {
     var d = webdriver.promise.defer();
-    this.driver.element("#ctaButton").then(function (elm) {
+    browser.element("#ctaButton").then(function (elm) {
         d.fulfill(elm);
     });
     return d.promise;
@@ -54,13 +51,12 @@ Home.prototype.ctaButton = function () {
 Home.prototype.ctaButtonClick = function () {
 
     var d = webdriver.promise.defer();
-    this.driver.click(this.ctaButton()).then(function () {
+    browser.click(this.ctaButton()).then(function (elm) {
         d.fulfill(elm);
     });
 
     return d.promise;
 };
-
 
 /*
  * @desc export HomePage
