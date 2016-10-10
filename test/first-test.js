@@ -31,6 +31,8 @@
 //         console.log(title);
 //     })
 //     .end();
+
+var assert = require("assert");
 describe('Home page', function () {
 
     var client = require('webdriverio').remote({
@@ -43,8 +45,6 @@ describe('Home page', function () {
             'public': true,
             'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
             build: process.env.TRAVIS_BUILD_NUMBER
-
-
         },
         host: 'ondemand.saucelabs.com',
         user: process.env.SAUCE_USERNAME,
@@ -53,13 +53,14 @@ describe('Home page', function () {
         logLevel: 'silent'
     });
 
-    it("The title is 'demo website'", function (done) {
+    it("The title should be 'Home Page'", function (done) {
         // Since we want the title from the page, we need to manually handle the Promise
         client
             .init()
             .url('http://localhost:8000/website/index.html')
             .getTitle().then(function (title) {
             console.log(title);
+            assert.equal(title, "Home Page");
             done()
         })
             .end();
