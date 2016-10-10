@@ -23,7 +23,8 @@
     "jQuery": "1.7.2",
     "webdriverio": "^4.2.11",
     "wdio-sauce-service": "~0.2.4",
-    "wdio-mocha-framework": "~0.3.5"
+    "wdio-mocha-framework": "~0.3.5",
+    "sauce-connect-launcher": "0.15.1"
   },
   "devDependencies": {
     "chromedriver": "^2.23.1",
