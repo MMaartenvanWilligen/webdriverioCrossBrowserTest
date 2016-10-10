@@ -80,61 +80,48 @@
 //     // });
 // });
 //
-// describe("functional testing in real browser", function () {
-//
-//     var client;
-//     var webdriverio = require('webdriverio');
-//
-//     client = webdriverio.remote({
-//         desiredCapabilities: {
-//             browserName: 'chrome',
-//             version: 'latest',
-//             tags: ['examples'],
-//             name: 'This is an example test',
-//             'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-//             build: process.env.TRAVIS_BUILD_NUMBER,
-//
-//
-//             // If using Open Sauce (https://saucelabs.com/opensauce/),
-//             // capabilities must be tagged as "public" for the jobs's status
-//             // to update (failed/passed). If omitted on Open Sauce, the job's
-//             // status will only be marked "Finished." This property can be
-//             // be omitted for commerical (private) Sauce Labs accounts.
-//             // Also see https://support.saucelabs.com/customer/portal/articles/2005331-why-do-my-tests-say-%22finished%22-instead-of-%22passed%22-or-%22failed%22-how-do-i-set-the-status-
-//             'public': true
-//         },
-//         host: 'ondemand.saucelabs.com',
-//         port: 80,
-//         user: process.env.SAUCE_USERNAME,
-//         key: process.env.SAUCE_ACCESS_KEY,
-//         logLevel: 'silent'
-//     }).init();
-//
-//
-//     it("Expect onclick text change to buttontransform", function (done) {
-//         client
-//             .url('https://saucelabs.com/blog/accelerate-multi-browser-testing-using-sauce-labs-and-webdriverio')
-//             .pause(1000)
-//             .getTitle().then(function (title) {
-//             console.log(title);
-//             done();
-//         })
-//
-//     });
-// });
-//
+describe("functional testing in real browser", function () {
+
+    var client;
+    var webdriverio = require('webdriverio');
+
+    client = webdriverio.remote({
+        desiredCapabilities: {
+            browserName: 'chrome',
+            version: 'latest',
+            tags: ['examples'],
+            name: 'This is an example test',
+            'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+            build: process.env.TRAVIS_BUILD_NUMBER,
 
 
-var webdriverio = require('webdriverio');
-var options = { desiredCapabilities: { browserName: 'chrome' } };
-var client = webdriverio.remote(options);
-client
-    .init()
-    .url('https://duckduckgo.com/')
-    .setValue('#search_form_input_homepage', 'WebdriverIO')
-    .click('#search_button_homepage')
-    .getTitle().then(function(title) {
-    console.log('Title is: ' + title);
-    // outputs: "Title is: WebdriverIO (Software) at DuckDuckGo"
-})
-    .end();
+            // If using Open Sauce (https://saucelabs.com/opensauce/),
+            // capabilities must be tagged as "public" for the jobs's status
+            // to update (failed/passed). If omitted on Open Sauce, the job's
+            // status will only be marked "Finished." This property can be
+            // be omitted for commerical (private) Sauce Labs accounts.
+            // Also see https://support.saucelabs.com/customer/portal/articles/2005331-why-do-my-tests-say-%22finished%22-instead-of-%22passed%22-or-%22failed%22-how-do-i-set-the-status-
+            'public': true
+        },
+        host: 'ondemand.saucelabs.com',
+        port: 80,
+        user: process.env.SAUCE_USERNAME,
+        key: process.env.SAUCE_ACCESS_KEY,
+        logLevel: 'silent'
+    }).init()
+        .url('https://saucelabs.com/blog/accelerate-multi-browser-testing-using-sauce-labs-and-webdriverio')
+        .pause(1000)
+        .getTitle().then(function (title) {
+            console.log(title);
+
+        });
+
+
+    it("Expect onclick text change to buttontransform", function (done) {
+        done();
+
+
+    });
+});
+
+
