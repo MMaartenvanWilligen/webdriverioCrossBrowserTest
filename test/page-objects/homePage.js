@@ -46,8 +46,6 @@ Home.prototype.ctaButton = function () {
  * @return promise raised button element
  * */
 Home.prototype.ctaButtonClick = function () {
-
-
     return browser.click(this.ctaButton()).then(function (elm) {
         return elm
     });
