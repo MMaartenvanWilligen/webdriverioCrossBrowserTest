@@ -80,7 +80,12 @@
 //     // });
 // });
 
-var webdriverio = require('webdriverio'),
+describe("functional testing in real browser", function () {
+
+    var client;
+
+    var webdriverio = require('webdriverio');
+
     client = webdriverio.remote({
         desiredCapabilities: {
             browserName: 'chrome',
@@ -108,19 +113,15 @@ var webdriverio = require('webdriverio'),
     }).init();
 
 
-describe("functional testing in real browser", function () {
-
     it("Expect onclick text change to buttontransform", function (done) {
         client
             .url('http://localhost:4445/webdriverioProject/website/index.html')
-            .setValue('*[name="q"]','webdriverio')
-            .click('*[name="btnG"]')
             .pause(1000)
-            .getTitle().then(function(title) {
-                console.log(title);
-                done();
-            })
-            .end();
+            .getTitle().then(function (title) {
+            console.log(title);
+            done();
+        })
+
     });
 });
 
