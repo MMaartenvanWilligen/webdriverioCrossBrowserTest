@@ -38,7 +38,7 @@ describe('Home page', function () {
         key: process.env.SAUCE_ACCESS_KEY,
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         build: process.env.TRAVIS_BUILD_NUMBER,
-        host: 'localhost',
+        host: 'ondemand.saucelabs.com',
         port: 4445,
         desiredCapabilities: {
             browserName: 'chrome',
