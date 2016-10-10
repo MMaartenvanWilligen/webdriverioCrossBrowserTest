@@ -52,7 +52,7 @@ describe('Home page', function () {
         // Since we want the title from the page, we need to manually handle the Promise
         client
             .init()
-            .url('http://localhost:4445/webdriverioProject/website/index.html')
+            .url('http://localhost:8000/website/index.html')
             .getTitle().then(function (title) {
             console.log(title);
             done()
