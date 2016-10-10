@@ -36,28 +36,27 @@ var assert = require("assert");
 describe('Home page', function () {
 
     /*var client = require('webdriverio').remote({
-        desiredCapabilities: {
-            browserName: 'chrome',
-            version: 'latest',
-            platform: 'Windows XP',
-            tags: ['examples'],
-            name: 'chrome test',
-            'public': true,
-            'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-            build: process.env.TRAVIS_BUILD_NUMBER
-        },
-        host: 'ondemand.saucelabs.com',
-        user: process.env.SAUCE_USERNAME,
-        key: process.env.SAUCE_ACCESS_KEY,
-        port: 80,
-        logLevel: 'silent'
-    });*/
+     desiredCapabilities: {
+     browserName: 'chrome',
+     version: 'latest',
+     platform: 'Windows XP',
+     tags: ['examples'],
+     name: 'chrome test',
+     'public': true,
+     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+     build: process.env.TRAVIS_BUILD_NUMBER
+     },
+     host: 'ondemand.saucelabs.com',
+     user: process.env.SAUCE_USERNAME,
+     key: process.env.SAUCE_ACCESS_KEY,
+     port: 80,
+     logLevel: 'silent'
+     });*/
 
     it("The title should be 'Home Page'", function (done) {
         // Since we want the title from the page, we need to manually handle the Promise
-        browser
-            .url('http://localhost:8000/website/index.html')
-            .getTitle().then(function (title) {
+        browser.url('http://localhost:8000/website/index.html');
+        browser.getTitle().then(function (title) {
             console.log(title);
             assert.equal(title, "Home Page");
             client.end();
