@@ -8,7 +8,6 @@
  * */
 
 var Page = require("./page");
-var until = webdriver.until;
 
 /*
  * @desc constructor HomePage object
@@ -37,7 +36,7 @@ Home.prototype.constructor = Home;
  * */
 
 Home.prototype.ctaButton = function () {
-    var d = webdriver.promise.defer();
+    var d = browser.promise.defer();
     browser.element("#ctaButton").then(function (elm) {
         d.fulfill(elm);
     });
@@ -50,11 +49,10 @@ Home.prototype.ctaButton = function () {
  * */
 Home.prototype.ctaButtonClick = function () {
 
-    var d = webdriver.promise.defer();
+    var d = browser.promise.defer();
     browser.click(this.ctaButton()).then(function (elm) {
         d.fulfill(elm);
     });
-
     return d.promise;
 };
 

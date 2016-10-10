@@ -1,5 +1,3 @@
-var webdriver = require("selenium-webdriver");
-var until = webdriver.until;
 var assert = require("assert");
 var chai = require('chai')
     , expect = chai.expect
@@ -23,7 +21,7 @@ describe('Home page', function () {
 
     it("The title is 'demo website'", function () {
         // Since we want the title from the page, we need to manually handle the Promise
-        return driver.getTitle().then(function (title) {
+        return browser.getTitle().then(function (title) {
             assert.equal(title, "Home Page");
         });
     });
