@@ -109,12 +109,12 @@ describe("functional testing in real browser", function () {
         user: process.env.SAUCE_USERNAME,
         key: process.env.SAUCE_ACCESS_KEY,
         logLevel: 'silent'
-    }).init().url('http://localhost:4445/webdriverioProject/website/index.html');
+    }).init();
 
 
     it("Expect onclick text change to buttontransform", function (done) {
         client
-            .url('http://localhost:4445/webdriverioProject/website/index.html')
+            .url('http://localhost:8000/webdriverioProject/website/index.html')
             .pause(1000)
             .getTitle().then(function (title) {
             console.log(title);
