@@ -83,13 +83,12 @@
 describe("functional testing in real browser", function () {
 
     var client;
-
     var webdriverio = require('webdriverio');
 
     client = webdriverio.remote({
         desiredCapabilities: {
             browserName: 'chrome',
-            version: '27',
+            version: 'latest',
             platform: 'XP',
             tags: ['examples'],
             name: 'This is an example test',
@@ -110,7 +109,7 @@ describe("functional testing in real browser", function () {
         user: process.env.SAUCE_USERNAME,
         key: process.env.SAUCE_ACCESS_KEY,
         logLevel: 'silent'
-    }).init();
+    }).init().url('http://localhost:4445/webdriverioProject/website/index.html');
 
 
     it("Expect onclick text change to buttontransform", function (done) {
