@@ -89,7 +89,6 @@ describe("functional testing in real browser", function () {
         desiredCapabilities: {
             browserName: 'chrome',
             version: 'latest',
-            platform: 'XP',
             tags: ['examples'],
             name: 'This is an example test',
             'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
@@ -114,7 +113,7 @@ describe("functional testing in real browser", function () {
 
     it("Expect onclick text change to buttontransform", function (done) {
         client
-            .url('http://localhost:8000/webdriverioProject/website/index.html')
+            .url('https://saucelabs.com/blog/accelerate-multi-browser-testing-using-sauce-labs-and-webdriverio')
             .pause(1000)
             .getTitle().then(function (title) {
             console.log(title);
