@@ -44,8 +44,6 @@ describe('Home page', function () {
             platform: 'Windows XP',
             tags: ['examples'],
             name: 'This is an example test',
-            'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-            build: process.env.TRAVIS_BUILD_NUMBER,
             'public': true
         }
     });
