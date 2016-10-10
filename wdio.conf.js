@@ -3,11 +3,11 @@ exports.config = {
     /**
      * capabilities
      */
-
+/*
     commonCapabilities: {
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         build: process.env.TRAVIS_BUILD_NUMBER
-    },
+    },*/
 
     capabilities: [{
         browserName: 'chrome',
@@ -27,10 +27,11 @@ exports.config = {
     /**
      * test configurations
      */
-    host: 'http://' + process.env.SAUCE_USERNAME + ':' + process.env.SAUCE_ACCESS_KEY + '@ondemand.saucelabs.com:80/wd/hub',
-    /*user: process.env.SAUCE_USERNAME,
+    port: 4445,
+    host: 'http://' + "Maaktnietzoveeluit" + ':' + "519926b3-9bcf-4500-9725-eb09b0a50d5d" + '@ondemand.saucelabs.com:80/wd/hub',
+    user: process.env.SAUCE_USERNAME,
     key: process.env.SAUCE_ACCESS_KEY,
-    services:["sauce"],*/
+    services:["sauce"],
     logLevel: 'silent',
     coloredLogs: true,
     screenshotPath: 'screenshots',
