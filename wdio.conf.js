@@ -27,10 +27,10 @@ exports.config = {
     /**
      * test configurations
      */
-
-    user: process.env.SAUCE_USERNAME,
+    host: 'http://' + process.env.SAUCE_USERNAME + ':' + process.env.SAUCE_ACCESS_KEY + '@ondemand.saucelabs.com:80/wd/hub',
+    /*user: process.env.SAUCE_USERNAME,
     key: process.env.SAUCE_ACCESS_KEY,
-    services:["sauce"],
+    services:["sauce"],*/
     logLevel: 'silent',
     coloredLogs: true,
     screenshotPath: 'screenshots',
