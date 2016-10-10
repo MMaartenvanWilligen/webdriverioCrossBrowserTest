@@ -120,11 +120,7 @@ describe("functional testing in real browser", function () {
     var driver = require("./driver").GetDriver();
 
     it("Expect onclick text change to buttontransform", function (done) {
-<<<<<<< Updated upstream
-        driver
-=======
         client
->>>>>>> Stashed changes
             .url('http://localhost:4445/webdriverioProject/website/index.html')
             .setValue('*[name="q"]','webdriverio')
             .click('*[name="btnG"]')
