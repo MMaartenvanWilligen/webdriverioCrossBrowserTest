@@ -36,16 +36,25 @@ var assert = require("assert");
 describe('Home page', function () {
 
     var client = require('webdriverio').remote({
-        desiredCapabilities: {
+        desiredCapabilities: [{
             browserName: 'chrome',
             version: 'latest',
             platform: 'Windows XP',
             tags: ['examples'],
-            name: 'This is an example test',
+            name: 'chrome test',
             'public': true,
             'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
             build: process.env.TRAVIS_BUILD_NUMBER
-        },
+        }, {
+            browserName: 'firefox',
+            version: 'latest',
+            platform: 'Windows XP',
+            tags: ['examples'],
+            name: 'firefox test',
+            'public': true,
+            'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+            build: process.env.TRAVIS_BUILD_NUMBER
+        }],
         host: 'ondemand.saucelabs.com',
         user: process.env.SAUCE_USERNAME,
         key: process.env.SAUCE_ACCESS_KEY,
