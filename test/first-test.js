@@ -31,21 +31,35 @@
 //         console.log(title);
 //     })
 //     .end();
+describe('Home page', function () {
 
+    var client = require('webdriverio').remote({
+        user: process.env.SAUCE_USERNAME,
+        key: process.env.SAUCE_ACCESS_KEY,
+        host: 'localhost',
+        port: 4445,
+        desiredCapabilities: {
+            browserName: 'chrome',
+            version: 'latest',
+            platform: 'Windows XP',
+            tags: ['examples'],
+            name: 'This is an example test',
+            'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+            build: process.env.TRAVIS_BUILD_NUMBER,
+            'public': true
+        }
+    });
 
+    it("The title is 'demo website'", function (done) {
+        // Since we want the title from the page, we need to manually handle the Promise
+        client
+            .init()
+            .url('http://localhost:4445/webdriverioProject/website/index.html')
+            .getTitle().then(function (title) {
+            console.log(title);
+            done()
+        })
+            .end();
 
-var client = require('webdriverio').remote({
-    user: process.env.SAUCE_USERNAME,
-    key: process.env.SAUCE_ACCESS_KEY,
-    host: 'localhost',
-    port: 4445,
-    desiredCapabilities: {
-        browserName: 'chrome'
-    }
+    });
 });
-
-client
-    .init()
-    .url('http://localhost:4445/webdriverioProject/website/index.html')
-    .getTitle().then(console.log)
-    .end();
