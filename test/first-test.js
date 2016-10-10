@@ -13,8 +13,8 @@ describe('Home page', function () {
     it("should open the homepage", function () {
         homepage = new Home();
         return homepage.getUrl().then(function () {
-            homepage.currentUrl().then(function (url) {
-                assert.equal(url, homepage.urllocal);
+           return homepage.currentUrl().then(function (url) {
+               return assert.equal(url, homepage.urllocal);
             })
         });
     });
@@ -22,7 +22,7 @@ describe('Home page', function () {
     it("The title is 'demo website'", function () {
         // Since we want the title from the page, we need to manually handle the Promise
         return browser.getTitle().then(function (title) {
-            assert.equal(title, "Home Page");
+           return assert.equal(title, "Home Page");
         });
     });
 });

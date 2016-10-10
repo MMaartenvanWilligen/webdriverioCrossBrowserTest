@@ -10,7 +10,6 @@ var urllocal;
  * */
 
 function Page(urllocal) {
-
     this.urllocal = urllocal;
 }
 
@@ -20,24 +19,16 @@ function Page(urllocal) {
  * */
 
 Page.prototype.getUrl = function () {
-
-    var d = browser.promise.defer();
-    browser.url(this.urllocal).then(function (url) {
-        d.fulfill(url);
+    return browser.url(this.urllocal).then(function (url) {
+        return url
     });
-    return d.promise;
 };
 
 Page.prototype.currentUrl = function () {
-
-    var d = browser.promise.defer();
-    browser.getUrl().then(function (url) {
+    return browser.getUrl().then(function (url) {
         console.log("current url:" + " " + url);
-        d.fulfill(url);
+        return url;
     });
-
-    return d.promise;
-
 };
 
 module.exports = Page;
