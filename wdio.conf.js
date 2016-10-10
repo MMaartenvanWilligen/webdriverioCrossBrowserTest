@@ -30,6 +30,7 @@ exports.config = {
     key: process.env.SAUCE_ACCESS_KEY,
     port: 80,
     logLevel: 'silent',
+    sync: false,
     coloredLogs: true,
     waitforTimeout: 10000,
     reporters: ['dot'],

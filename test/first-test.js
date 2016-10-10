@@ -59,7 +59,6 @@ describe('Home page', function () {
         browser.getTitle().then(function (title) {
             console.log(title);
             assert.equal(title, "Home Page");
-            client.end();
             done()
         })
     });
