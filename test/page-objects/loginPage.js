@@ -1,9 +1,8 @@
 /**
  * Created by maarten on 29-09-16.
  */
-var webdriver = require("selenium-webdriver");
+
 var Page = require("./page");
-var until = webdriver.until;
 
 /*
  * constructor HomePage object
@@ -11,10 +10,10 @@ var until = webdriver.until;
  * @param driver
  * */
 
-function Login(driver) {
+function Login() {
 
-    Page.call(this, driver, "http://localhost:8000/website/loginPage.html");
-    console.log("driver" + " " + driver);
+    Page.call(this, "http://localhost:8000/website/loginPage.html");
+
 }
 
 // subclass Homepage extends page
@@ -28,11 +27,11 @@ Login.prototype.constructor = Login;
  * */
 
 Login.prototype.inputUsername = function () {
-    var d = webdriver.promise.defer();
-    this.driver.findElement(webdriver.By.id("username")).then(function (elm) {
-        d.fulfill(elm);
+
+    browser.element(webdriver.By.id("username")).then(function (elm) {
+
     });
-    return d.promise;
+
 
     //inputUserName.sendKeys('Maarten');
 };

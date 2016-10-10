@@ -19,10 +19,18 @@ describe('Home page', function () {
         });
     });
 
-    it("The title is 'demo website'", function () {
-        // Since we want the title from the page, we need to manually handle the Promise
+    it("The title is 'Home Page'", function () {
         return browser.getTitle().then(function (title) {
            return assert.equal(title, "Home Page");
         });
     });
+
+    it("CTA button should have text raised", function () {
+        return homepage.ctaButton().then(function (elm) {
+           return browser.getText(elm).then(function (txt) {
+               return assert.equal(txt, "RAISED");
+            });
+        });
+    });
+
 });

@@ -36,11 +36,9 @@ Home.prototype.constructor = Home;
  * */
 
 Home.prototype.ctaButton = function () {
-    var d = browser.promise.defer();
-    browser.element("#ctaButton").then(function (elm) {
-        d.fulfill(elm);
+    return browser.element("#ctaButton").then(function (elm) {
+        return elm
     });
-    return d.promise;
 };
 
 /* @desc method click on raised button
@@ -49,11 +47,10 @@ Home.prototype.ctaButton = function () {
  * */
 Home.prototype.ctaButtonClick = function () {
 
-    var d = browser.promise.defer();
-    browser.click(this.ctaButton()).then(function (elm) {
-        d.fulfill(elm);
+
+    return browser.click(this.ctaButton()).then(function (elm) {
+        return elm
     });
-    return d.promise;
 };
 
 /*
