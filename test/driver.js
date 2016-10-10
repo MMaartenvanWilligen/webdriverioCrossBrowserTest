@@ -28,24 +28,26 @@ function GetDriver() {
 var buildDriver = function () {
 
     var driver = new webdriverio.remote({
-        desiredCapabilities: {
+        desiredCapabilities: [{
             browserName: 'chrome',
-            version: '27',
+            version: 'latest',
             platform: 'XP',
             tags: ['examples'],
-            name: 'This is an example test',
+            name: 'chrome remote',
             'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
             build: process.env.TRAVIS_BUILD_NUMBER,
-
-
-            // If using Open Sauce (https://saucelabs.com/opensauce/),
-            // capabilities must be tagged as "public" for the jobs's status
-            // to update (failed/passed). If omitted on Open Sauce, the job's
-            // status will only be marked "Finished." This property can be
-            // be omitted for commerical (private) Sauce Labs accounts.
-            // Also see https://support.saucelabs.com/customer/portal/articles/2005331-why-do-my-tests-say-%22finished%22-instead-of-%22passed%22-or-%22failed%22-how-do-i-set-the-status-
             'public': true
-        },
+        }, {
+            browserName: 'firefox',
+            version: 'latest',
+            platform: 'XP',
+            tags: ['examples'],
+            name: 'firefox remote',
+            'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+            build: process.env.TRAVIS_BUILD_NUMBER,
+            'public': true
+
+        }],
         // host: 'ondemand.saucelabs.com',
         // user: process.env.SAUCE_USERNAME,
         // key: process.env.SAUCE_ACCESS_KEY,

@@ -63,7 +63,7 @@ exports.config = {
                     return reject(err);
                 }
                 console.log('conexion realizada');
-                global.sauceConnectProcess = sauceConnectProcess
+                global.sauceConnectProcess = sauceConnectProcess;
                 resolve();
             });
         });
