@@ -108,16 +108,7 @@ var webdriverio = require('webdriverio'),
     }).init();
 
 
-var webdriver = require("webdriverio");
-var until = webdriver.until;
-var assert = require("assert");
-var chai = require('chai')
-    , expect = chai.expect
-    , should = chai.should();
-
 describe("functional testing in real browser", function () {
-
-    var driver = require("./driver").GetDriver();
 
     it("Expect onclick text change to buttontransform", function (done) {
         client
