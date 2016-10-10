@@ -38,9 +38,9 @@ var buildDriver = function () {
             build: process.env.TRAVIS_BUILD_NUMBER,
             'public': true
         },
-        // host: 'ondemand.saucelabs.com',
-        // user: process.env.SAUCE_USERNAME,
-        // key: process.env.SAUCE_ACCESS_KEY,
+        host: 'ondemand.saucelabs.com',
+        user: process.env.SAUCE_USERNAME,
+        key: process.env.SAUCE_ACCESS_KEY,
         port: 80,
         logLevel: 'silent'
     }).init();
