@@ -26,8 +26,8 @@ describe('Home page', function () {
     });
 
     it("CTA button should have text raised", function () {
-        return homepage.ctaButton().then(function (elm) {
-           return elm.getText().then(function (txt) {
+        return homepage.ctaButton().then(function () {
+           return browser.getText().then(function (txt) {
                return assert.equal(txt, "RAISED");
             });
         });
