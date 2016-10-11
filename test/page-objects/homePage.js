@@ -34,9 +34,9 @@ Home.prototype.constructor = Home;
  * */
 
 Home.prototype.ctaButtonText = function () {
-        browser.getText(this.ctaButton).then(function (txt) {
-            return txt;
-        })
+    return browser.getText(this.ctaButton).then(function (txt) {
+        return txt;
+    })
 };
 
 Home.prototype.ctaButtonClick = function () {
