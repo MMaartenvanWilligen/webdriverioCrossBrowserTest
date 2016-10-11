@@ -21,15 +21,26 @@ exports.config = {
         'public': true,
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         build: process.env.TRAVIS_BUILD_NUMBER
+    }, {
+        browserName: 'internet explorer',
+        version: 'latest',
+        platform: 'Windows XP',
+        tags: ['examples'],
+        name: 'internet explorer test',
+        'public': true,
+        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+        build: process.env.TRAVIS_BUILD_NUMBER
     }],
+
     /**
      * test configurations
      */
+    maxInstances: 10,
     host: 'ondemand.saucelabs.com',
     user: process.env.SAUCE_USERNAME,
     key: process.env.SAUCE_ACCESS_KEY,
     port: 80,
-    logLevel: 'result',
+    logLevel: 'verbose',
     sync: false,
     coloredLogs: true,
     waitforTimeout: 10000,
@@ -45,8 +56,7 @@ exports.config = {
      * specify test files
      */
     specs: [
-        './test/first-test.js'
+        './test/*-test.js'
     ]
-
 };
 
