@@ -14,9 +14,10 @@ cache:
     - node_modules
 
 addons:
-  sauce_connect:
-    username: "Maaktnietzoveeluit"
-    access_key: "519926b3-9bcf-4500-9725-eb09b0a50d5d"
+  browserstack:
+    username: "maartenvanwillig1"
+    access_key: "ff98iGJg7aTFjpxpo4Cz"
 
 notifications:
   email: false
+

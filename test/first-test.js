@@ -46,9 +46,9 @@ describe('Home page', function () {
             'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
             build: process.env.TRAVIS_BUILD_NUMBER
         },
-        host: 'ondemand.saucelabs.com',
-        user: process.env.SAUCE_USERNAME,
-        key: process.env.SAUCE_ACCESS_KEY,
+        host: 'hub-cloud.browserstack.com',
+        user: 'maartenvanwillig1',
+        key: 'ff98iGJg7aTFjpxpo4Cz',
         port: 80,
         logLevel: 'silent'
     });
