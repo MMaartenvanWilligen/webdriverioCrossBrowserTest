@@ -34,6 +34,7 @@ describe('Home page', function () {
     it("CTA button should have text 'buttonraised' after click", function () {
         return homepage.ctaButtonClick().then(function () {
             return homepage.ctaButtonText().then(function (txt) {
+                console.log(txt);
                 return assert.equal(txt, "BUTTONTRANSFORM");
             });
         });
