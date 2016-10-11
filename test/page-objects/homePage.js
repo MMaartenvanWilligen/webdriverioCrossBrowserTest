@@ -19,8 +19,6 @@ function Home() {
     Page.call(this, "http://localhost:8000/website/index.html");
 }
 
-
-
 // subclass Homepage extends page
 Home.prototype = Object.create(Page.prototype);
 Home.prototype.constructor = Home;
