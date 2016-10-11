@@ -33,9 +33,7 @@ Home.prototype.ctaButtonText = function () {
 };
 
 Home.prototype.ctaButtonClick = function () {
-    return browser.click(this.ctaButton).then(function () {
-       return this.ctaButtonText()
-    })
+    return browser.click(this.ctaButton);
 };
 
 /*
