@@ -5,7 +5,6 @@ var chai = require('chai')
 
 var Home = require("./page-objects/homePage");
 
-
 var homepage;
 
 describe('Home page', function () {
@@ -26,13 +25,15 @@ describe('Home page', function () {
     });
 
     it("CTA button should have text raised", function () {
-        homepage.ctaButtonText().then(function (txt) {
+        return homepage.ctaButtonText().then(function (txt) {
+            console.log(txt);
             return assert.equal(txt, "RAISED");
         });
     });
 
     it("CTA button should have text 'buttonraised' after click", function () {
-        homepage.ctaButtonClick().then(function (txt) {
+        return homepage.ctaButtonClick().then(function (txt) {
+            console.log(txt);
             return assert.equal(txt, "BUTTONTRANSFORM");
         });
     });
