@@ -15,8 +15,9 @@ cache:
 
 addons:
   sauce_connect:
-    username: "Maaktnietzoveeluit"
-    access_key: "519926b3-9bcf-4500-9725-eb09b0a50d5d"
+    username: "maarten1234"
+    access_key: "a5b54d53-3cfb-4609-a883-e7fa7520afe5"
 
 notifications:
   email: false
+
