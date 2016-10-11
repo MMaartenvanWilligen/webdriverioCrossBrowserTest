@@ -30,4 +30,15 @@ describe('Home page', function () {
             return assert.equal(txt, "RAISED");
         });
     });
+
+    it("CTA button should have text 'buttonraised' after click", function () {
+        homepage.ctaButtonClick().then(function (txt) {
+            return assert.equal(txt, "BUTTONTRANSFORM");
+        });
+    });
+
+    after(function () {
+        return browser.end();
+    });
+
 });

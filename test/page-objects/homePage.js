@@ -19,7 +19,6 @@ function Home() {
 
     Page.call(this, "http://localhost:8000/website/index.html");
     this.ctaButton = "#ctaButton";
-
 }
 
 
@@ -40,7 +39,10 @@ Home.prototype.ctaButtonText = function () {
 };
 
 Home.prototype.ctaButtonClick = function () {
-    return browser.click(this.ctaButton);
+    return browser.click(this.ctaButton).then(function () {
+       return this.ctaButtonText()
+    })
+
 };
 
 /*
