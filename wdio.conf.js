@@ -6,7 +6,7 @@ exports.config = {
     capabilities: [{
         browserName: 'chrome',
         version: 'latest',
-        platform: 'Windows XP',
+        platform: 'Windows 10',
         tags: ['examples'],
         name: 'chrome test',
         'public': true,
@@ -15,7 +15,7 @@ exports.config = {
     }, {
         browserName: 'firefox',
         version: 'latest',
-        platform: 'Windows XP',
+        platform: 'Windows 10',
         tags: ['examples'],
         name: 'firefox test',
         'public': true,
@@ -24,7 +24,7 @@ exports.config = {
     }, {
         browserName: 'internet explorer',
         version: 'latest',
-        platform: 'Windows XP',
+        platform: 'Windows 10',
         tags: ['examples'],
         name: 'internet explorer test',
         'public': true,
@@ -40,7 +40,7 @@ exports.config = {
     user: process.env.SAUCE_USERNAME,
     key: process.env.SAUCE_ACCESS_KEY,
     port: 80,
-    logLevel: 'verbose',
+    logLevel: 'silent',
     sync: false,
     coloredLogs: true,
     waitforTimeout: 10000,

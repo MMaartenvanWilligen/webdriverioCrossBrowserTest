@@ -22,7 +22,6 @@ var loginpage;
  * */
 
 describe("Login test", function () {
-
     /*
      * @desc before test initialize driver
      * */
