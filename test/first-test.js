@@ -37,8 +37,4 @@ describe('Home page', function () {
         });
     });
 
-    after(function () {
-        return browser.end();
-    });
-
 });

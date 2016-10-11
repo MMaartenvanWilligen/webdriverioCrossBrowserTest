@@ -16,7 +16,6 @@ var Page = require("./page");
 
 
 function Home() {
-
     Page.call(this, "http://localhost:8000/website/index.html");
     this.ctaButton = "#ctaButton";
 }
@@ -26,11 +25,6 @@ function Home() {
 Home.prototype = Object.create(Page.prototype);
 Home.prototype.constructor = Home;
 
-
-/* @desc method click on raised button
- * need to manually handle the Promise so it can be handled by the mocha framework in first-test.js
- * @return promise raised button element
- * */
 
 Home.prototype.ctaButtonText = function () {
     return browser.getText(this.ctaButton).then(function (txt) {
@@ -42,7 +36,6 @@ Home.prototype.ctaButtonClick = function () {
     return browser.click(this.ctaButton).then(function () {
        return this.ctaButtonText()
     })
-
 };
 
 /*
