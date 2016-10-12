@@ -57,9 +57,3 @@ Home.prototype.checkLinkshref = function () {
 
 module.exports = Home;
 
-
-res.value.forEach(function (elem) {
-    client.elementIdAttribute(elem, 'href', function (err, res) {
-        console.log(++i, res.value);
-    });
-});
