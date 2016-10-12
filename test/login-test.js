@@ -20,14 +20,6 @@ var loginpage;
  * */
 
 describe("Login test", function () {
-    /*
-     * @desc before test initialize driver
-     * */
-    // before(function (done) {
-    //     driver = require("./driver").GetDriver();
-    //     done();
-    //     loginpage = new Login(driver);
-    // });
 
     it("should open the loginPage", function () {
         loginpage = new Login();
