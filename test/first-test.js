@@ -40,31 +40,31 @@ describe('Home page', function () {
         });
     });
 
-    it("links'", function () {
-
-        return browser.elements('<a />', function(err,res) {
-            var i = 0;
-           return res.value.forEach(function(elem) {
-               console.log(++i, elem.value);
-               return  browser.elementIdAttribute(elem, 'href', function(err,res) {
-                    return console.log(++i, res.value);
-                });
-            });
-        });
-    });
+    // it("links'", function () {
+    //
+    //     return browser.elements('<a />', function(err,res) {
+    //         var i = 0;
+    //        return res.value.forEach(function(elem) {
+    //            console.log(++i, elem.value);
+    //            return  browser.elementIdAttribute(elem, 'href', function(err,res) {
+    //                 return console.log(++i, res.value);
+    //             });
+    //         });
+    //     });
+    // });
 
     it("links href'", function () {
-        return browser.elements("a").then(function (res) {
+        return browser.elements("<a />").then(function (res) {
             console.log("1 link elements res" + " " + res.value);
             console.log('a elements on page: ',res.value.length);
              return res.value.forEach(function (elem) {
-                 console.log("2 link element" + " " + elem.id);
-                 browser.elementIdAttribute(elem.Element, 'href').then( function (err, res) {
+                 console.log("2 link element" + " " + elem);
+                return browser.elementIdAttribute(elem, 'href').then( function (err, res) {
                      console.log("3 link res" + " " + res);
                      console.log("3 link res" + " " + res.value);
                      console.log("3 link err" + " " + err.value);
                      hrefString = res;
-                     return hrefString.should.be.empty;
+                     // return hrefString.should.be.empty;
                  });
              });
          });
