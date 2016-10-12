@@ -42,31 +42,35 @@ describe('Home page', function () {
 
     it("links'", function () {
 
-        return browser.elements('<a />', function(err,res) {
+        browser.elements('<a />', function(err,res) {
             var i = 0;
            res.value.forEach(function(elem) {
                console.log(++i, elem.value);
                 browser.elementIdAttribute(elem, 'href', function(err,res) {
-                    console.log(++i, res.value);
+                    return console.log(++i, res.value);
                 });
             });
         });
 
 
 
-       // return browser.elements("<a>").then(function (res) {
-       //      console.log("1 link elements res" + " " + res);
-       //      return res.value.forEach(function (elem) {
-       //          console.log("2 link element" + " " + elem.value);
-       //          return browser.getAttribute(elem, 'href', function (err, res) {
-       //              console.log("3 link res" + " " + res);
-       //              console.log("3 link res" + " " + res.value);
-       //              console.log("3 link err" + " " + err.value);
-       //              hrefString = res;
-       //              return hrefString.should.be.empty;
-       //          })
-       //      });
-       //  });
+
+    });
+
+    it("links href'", function () {
+        return browser.elements("<a>").then(function (res) {
+             console.log("1 link elements res" + " " + res);
+             return res.value.forEach(function (elem) {
+                 console.log("2 link element" + " " + elem.value);
+                 return browser.elementIdAttribute(elem, 'href', function (err, res) {
+                     console.log("3 link res" + " " + res);
+                     console.log("3 link res" + " " + res.value);
+                     console.log("3 link err" + " " + err.value);
+                     hrefString = res;
+                     return hrefString.should.be.empty;
+                 })
+             });
+         });
     });
 
 });
