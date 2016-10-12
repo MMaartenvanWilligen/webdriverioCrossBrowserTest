@@ -59,10 +59,10 @@ describe('Home page', function () {
 
     it("links href'", function () {
         return browser.elements("<a />").then(function (res) {
-             console.log("1 link elements res" + " " + res.value);
+             console.log("1 link elements res" + " " + res.value[0]);
              return res.value.forEach(function (elem) {
                  console.log("2 link element" + " " + elem.value);
-                 console.log("2 link element" + " " + elem);
+                 console.log("2 link element" + " " + elem[0]);
                  return browser.elementIdAttribute(elem, 'href', function (err, res) {
                      console.log("3 link res" + " " + res);
                      console.log("3 link res" + " " + res.value);
