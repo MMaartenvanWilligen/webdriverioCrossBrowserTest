@@ -18,8 +18,6 @@ describe('Home page', function () {
         });
     });
 
-
-
     it("The title is 'Home Page'", function () {
         return browser.getTitle().then(function (title) {
             return assert.equal(title, "Home Page");
@@ -40,6 +38,10 @@ describe('Home page', function () {
                 return assert.equal(txt, "BUTTONTRANSFORM");
             });
         });
+    });
+
+    it("The title is 'Home Page'", function () {
+        return homepage.checkLinkshref();
     });
 
 });

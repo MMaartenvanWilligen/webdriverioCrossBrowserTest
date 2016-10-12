@@ -18,6 +18,9 @@ var Page = require("./page");
 function Home() {
     Page.call(this, "http://localhost:8000/website/index.html");
     this.ctaButton = "#ctaButton";
+    this.form = "#form";
+    this.nav = "#nav";
+    this.anchor = "<a>"
 }
 
 
@@ -36,6 +39,18 @@ Home.prototype.ctaButtonClick = function () {
     return browser.click(this.ctaButton);
 };
 
+Home.prototype.checkLinkshref = function () {
+
+    return browser.elements(this.nav > this.anchor).then(function (elements) {
+        console.log(elements);
+        return elements.value.forEach(function (ele) {
+            return browser.elementIdAttribute(ele.ELEMENT, "href").then(function (href) {
+                return console.log(href.value)
+            });
+        });
+    });
+};
+
 /*
  * @desc export HomePage
  * */
@@ -43,7 +58,8 @@ Home.prototype.ctaButtonClick = function () {
 module.exports = Home;
 
 
-
-
-
-
+res.value.forEach(function (elem) {
+    client.elementIdAttribute(elem, 'href', function (err, res) {
+        console.log(++i, res.value);
+    });
+});
