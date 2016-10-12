@@ -44,8 +44,8 @@ describe('Home page', function () {
 
         return browser.elements('<a />', function(err,res) {
             var i = 0;
-            res.value.forEach(function(elem) {
-                client.elementIdAttribute(elem, 'href', function(err,res) {
+           return res.value.forEach(function(elem) {
+                return browser.elementIdAttribute(elem, 'href', function(err,res) {
                     return console.log(++i, res.value);
                 });
             });
