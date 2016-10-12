@@ -1,18 +1,12 @@
-
-
 var Page = require("./page");
 
 /**
  * @desc constructor Contact
- *
- * driver
+ * not yet used!
  * */
 
-function Contact(driver) {
-
-    Page.call(this, driver, "http://localhost:8000/website/contactPage.html");
-    console.log("driver" + " " + driver);
-
+function Contact() {
+    Page.call(this, "http://localhost:8000/website/contactPage.html");
 }
 
 // subclass Homepage extends page

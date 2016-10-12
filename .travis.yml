@@ -1,13 +1,6 @@
-#sudo: required
-#dist: trusty
-
 language: node_js
 node_js:
   - stable
-
-before_script:
-  - python -m SimpleHTTPServer &
-  - sleep 2
 
 cache:
   directories:

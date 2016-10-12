@@ -4,7 +4,6 @@
 
 /**
  * @desc page object homepage
- *
  * */
 
 var Page = require("./page");
@@ -23,12 +22,21 @@ function Home() {
 Home.prototype = Object.create(Page.prototype);
 Home.prototype.constructor = Home;
 
+/**
+ * @desc method get text cat button
+ * @return promise txt
+ * */
 
 Home.prototype.ctaButtonText = function () {
     return browser.getText(this.ctaButton).then(function (txt) {
         return txt;
     })
 };
+
+/**
+ * @desc method get text cat button
+ * @return promise
+ * */
 
 Home.prototype.ctaButtonClick = function () {
     return browser.click(this.ctaButton);

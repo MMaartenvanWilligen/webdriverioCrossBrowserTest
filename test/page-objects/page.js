@@ -1,7 +1,7 @@
 /**
  * Created by maarten on 19-09-16.
  */
-// Object Page
+
 
 var urllocal;
 
@@ -12,11 +12,11 @@ var urllocal;
  * */
 
 function Page(urllocal) {
-    this.urllocal = urllocal;
+    this.urllocal = urllocal;      //set url of page
 }
 
 /**
- *  @desc method
+ * @desc method
  * @return url
  * @global 'browser' is wdio global. driver for browser automation
  * */

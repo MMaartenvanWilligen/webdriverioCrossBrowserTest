@@ -40,6 +40,7 @@ Login.prototype.inputUsername = function () {
  * @desc method get value of input field username *
  * @return promise value username
  * */
+
 Login.prototype.inputUsernameGetValue = function () {
 
     var d = webdriver.promise.defer();
@@ -55,6 +56,7 @@ Login.prototype.inputUsernameGetValue = function () {
  * @desc method set input field username *
  * @return promise
  * */
+
 Login.prototype.inputUsernameSetValue = function (inputText) {
     var d = webdriver.promise.defer();
     this.inputUsername().then(function (elm) {
