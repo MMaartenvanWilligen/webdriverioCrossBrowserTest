@@ -41,13 +41,14 @@ describe('Home page', function () {
     });
 
     it("links'", function () {
-        browser.elements(this.anchor).then(function (res) {
-            console.log(res);
+       return browser.elements(this.anchor).then(function (res) {
+            console.log("link elements res" + " " + res);
             res.value.ELEMENT.forEach(function (elemID) {
-                console.log(elem);
+                console.log("link element" + " " + elem);
                 browser.elementIdAttribute(elemID, 'href', function (err, res) {
                     console.log("link res" + " " + res);
                     console.log("link err" + " " + err);
+                    return assert.equal(res, "BUTTONTRANSFORM");
                 })
             });
         });
