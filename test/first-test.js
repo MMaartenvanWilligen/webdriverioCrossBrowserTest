@@ -44,9 +44,10 @@ describe('Home page', function () {
 
         return browser.elements('<a />', function(err,res) {
             var i = 0;
-           return res.value.forEach(function(elem) {
-                return browser.elementIdAttribute(elem, 'href', function(err,res) {
-                    return console.log(++i, res.value);
+           res.value.forEach(function(elem) {
+               console.log(++i, elem.value);
+                browser.elementIdAttribute(elem, 'href', function(err,res) {
+                    console.log(++i, res.value);
                 });
             });
         });
