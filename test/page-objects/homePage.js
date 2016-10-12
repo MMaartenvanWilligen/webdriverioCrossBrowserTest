@@ -2,24 +2,22 @@
  * Created by maarten on 19-09-16.
  */
 
-/*
+/**
  * @desc page object homepage
  *
  * */
 
 var Page = require("./page");
 
-/*
+/**
  * @desc constructor HomePage object
- * @param driver
+ * set the identifiers of homepage elements in variables
  * */
-
 
 function Home() {
     Page.call(this, "http://localhost:8000/website/index.html");
     this.ctaButton = "#ctaButton";
 }
-
 
 // subclass Homepage extends page
 Home.prototype = Object.create(Page.prototype);

@@ -1,7 +1,15 @@
+/*
+ * @desc configuration file for wdio
+ *
+ * */
+
 exports.config = {
 
     /**
-     * capabilities
+     * @desc capabilities
+     *       declaration in which browsers to test
+     *       testing in browser: chrome, firefox and internet explorer
+     *       saucelabs platform and browsers you can use: https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/
      */
     capabilities: [{
         browserName: 'chrome',
@@ -10,8 +18,8 @@ exports.config = {
         tags: ['examples'],
         name: 'chrome test',
         'public': true,
-        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-        build: process.env.TRAVIS_BUILD_NUMBER
+        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,     //suacelabs tunnel set up by travis. for saucelabs integration
+        build: process.env.TRAVIS_BUILD_NUMBER                  //travis build number. for saucelabs integration
     }, {
         browserName: 'firefox',
         version: 'latest',
@@ -19,8 +27,8 @@ exports.config = {
         tags: ['examples'],
         name: 'firefox test',
         'public': true,
-        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-        build: process.env.TRAVIS_BUILD_NUMBER
+        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,     //suacelabs tunnel set up by travis. for Saucelabs integration
+        build: process.env.TRAVIS_BUILD_NUMBER                  //travis build number. for saucelabs integration
     }, {
         browserName: 'internet explorer',
         version: 'latest',
@@ -28,35 +36,42 @@ exports.config = {
         tags: ['examples'],
         name: 'internet explorer test',
         'public': true,
-        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-        build: process.env.TRAVIS_BUILD_NUMBER
+        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,     //suacelabs tunnel set up by travis. for Saucelabs integration
+        build: process.env.TRAVIS_BUILD_NUMBER                  //travis build number. for saucelabs integration
     }],
 
     /**
-     * test configurations
+     * @desc test configurations
+     *
+     * maxInstances: as you have 3 different capabilities (Chrome, Firefox and Internet Explorer) and you have
+     * set maxInstances to 1, wdio will spawn 3 processes in suacelabs. Therefor if you have 10 spec
+     * files and you set maxInstances to 10, all test files will get tested at the same time
+     * and 30 processes will get spawned in saucelabs.
+     *
      */
-    maxInstances: 10,
-    host: 'ondemand.saucelabs.com',
-    user: process.env.SAUCE_USERNAME,
-    key: process.env.SAUCE_ACCESS_KEY,
-    port: 80,
+    maxInstances: 10,                                       //max test files to run
+    host: 'ondemand.saucelabs.com',                         //declare selenium host Saucelabs. for saucelab integration
+    user: process.env.SAUCE_USERNAME,                       //string sauce username. for Saucelab integration
+    key: process.env.SAUCE_ACCESS_KEY,                      //string suace acceskey. for Saucelab integration
+    port: 80,                                               //for Saucelabs integration
     logLevel: 'silent',
-    sync: false,
+    sync: false,                                            //sync set to false for using promises
     coloredLogs: true,
     waitforTimeout: 10000,
     reporters: ['dot'],
-    framework: 'mocha',
-    mochaOpts: {
-        ui: 'bdd'
-    },
     reporterOptions: {
         outputDir: './'
     },
+    framework: 'mocha',                                     //run tests with framework mocha
+    mochaOpts: {
+        ui: 'bdd'
+    },
+
     /**
-     * specify test files
+     * @desc specify test files
      */
     specs: [
-        './test/*-test.js'
+        './test/*-test.js'                                  //run all files in map 'test' with ' -test.js' in name
     ]
 };
 

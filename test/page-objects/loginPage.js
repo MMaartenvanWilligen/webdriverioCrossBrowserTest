@@ -21,8 +21,8 @@ Login.prototype = Object.create(Page.prototype);
 Login.prototype.constructor = Login;
 
 
-/* @desc method get input field username
- * need to manually handle the Promise so it can be handled by the mocha framework in first-test.js
+/**
+ * @desc method get input field username
  * @return promise of element username field
  * */
 
@@ -36,8 +36,8 @@ Login.prototype.inputUsername = function () {
     //inputUserName.sendKeys('Maarten');
 };
 
-/* @desc method get value of input field username
- * need to manually handle the Promise so it can be handled by the mocha framework in first-test.js
+/**
+ * @desc method get value of input field username *
  * @return promise value username
  * */
 Login.prototype.inputUsernameGetValue = function () {
@@ -51,8 +51,8 @@ Login.prototype.inputUsernameGetValue = function () {
     return d.promise;
 };
 
-/* @desc method set input field username
- * need to manually handle the Promise so it can be handled by the mocha framework in first-test.js
+/**
+ * @desc method set input field username *
  * @return promise
  * */
 Login.prototype.inputUsernameSetValue = function (inputText) {

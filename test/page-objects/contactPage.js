@@ -1,11 +1,9 @@
-/**
- * Created by maarten on 29-09-16.
- */
-var webdriver = require("selenium-webdriver");
+
+
 var Page = require("./page");
 
-/*
- * constructor HomePage object
+/**
+ * @desc constructor Contact
  *
  * driver
  * */

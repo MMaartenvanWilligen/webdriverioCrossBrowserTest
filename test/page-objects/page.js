@@ -5,17 +5,20 @@
 
 var urllocal;
 
-/*constructor
- * sets driver and url
+/**
+ * @desc constructor Page
+ * set url
+ * @param urllocal
  * */
 
 function Page(urllocal) {
     this.urllocal = urllocal;
 }
 
-/* method
- * get url with driver
- * return
+/**
+ *  @desc method
+ * @return url
+ * @global 'browser' is wdio global. driver for browser automation
  * */
 
 Page.prototype.getUrl = function () {
@@ -23,6 +26,12 @@ Page.prototype.getUrl = function () {
         return url
     });
 };
+
+/**
+ * @desc method get current url in browser
+ * @return url
+ * @global 'browser' is wdio global. driver for browser automation
+ * */
 
 Page.prototype.currentUrl = function () {
     return browser.getUrl().then(function (url) {
