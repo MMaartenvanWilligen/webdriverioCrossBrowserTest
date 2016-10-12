@@ -59,14 +59,16 @@ describe('Home page', function () {
             console.log('a elements on page: ',res.value.length);
              return res.value.forEach(function (elem) {
                  console.log("2 link element" + " " + elem);
-                return browser.elementIdAttribute(elem, 'href').then( function (err, res) {
+                browser.elementIdAttribute(elem, 'href').then( function (err, res) {
                      console.log("3 link res" + " " + res);
                      console.log("3 link res" + " " + res.value);
                      console.log("3 link err" + " " + err.value);
                      hrefString = res;
                      // return hrefString.should.be.empty;
                  });
-             });
+             }.then(function () {
+                 return this;
+             }));
          });
     });
 
