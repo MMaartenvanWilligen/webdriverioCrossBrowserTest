@@ -44,7 +44,7 @@ describe('Home page', function () {
        return browser.elements("<a>").then(function (res) {
             console.log("link elements res" + " " + res);
             return res.value.forEach(function (elem) {
-                console.log("link element" + " " + elem);
+                console.log("link element" + " " + elem.value);
                 return browser.getAttribute(elem, 'href', function (err, res) {
                     console.log("link res" + " " + res);
                     console.log("link res" + " " + res.value);
