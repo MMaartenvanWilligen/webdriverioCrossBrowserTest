@@ -49,7 +49,8 @@ describe('Home page', function () {
                     console.log("link res" + " " + res);
                     console.log("link res" + " " + res.value);
                     console.log("link err" + " " + err.value);
-                    return assert.equal(, "BUTTONTRANSFORM");
+                    hrefString = res;
+                    return hrefString.should.be.empty;
                 })
             });
         });
