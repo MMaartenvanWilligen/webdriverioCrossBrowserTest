@@ -42,24 +42,20 @@ describe('Home page', function () {
 
     it("links'", function () {
 
-        browser.elements('<a />', function(err,res) {
+        return browser.elements('<a />', function(err,res) {
             var i = 0;
-           res.value.forEach(function(elem) {
+           return res.value.forEach(function(elem) {
                console.log(++i, elem.value);
-                browser.elementIdAttribute(elem, 'href', function(err,res) {
+               return  browser.elementIdAttribute(elem, 'href', function(err,res) {
                     return console.log(++i, res.value);
                 });
             });
         });
-
-
-
-
     });
 
     it("links href'", function () {
         return browser.elements("<a />").then(function (res) {
-             console.log("1 link elements res" + " " + res.value[0]);
+             console.log("1 link elements res" + " " + res.value[0][0]);
              return res.value.forEach(function (elem) {
                  console.log("2 link element" + " " + elem.value);
                  console.log("2 link element" + " " + elem[0]);
