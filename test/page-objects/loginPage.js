@@ -60,7 +60,7 @@ Login.prototype.inputPasswordSetValue = function (inputText) {
 
 Login.prototype.submitClick = function () {
 
-    browser.click(this.submitButton);
+    return browser.click(this.submitButton);
 };
 
 Login.prototype.loginProcess = function (Username, password) {
