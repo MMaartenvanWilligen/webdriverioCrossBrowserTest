@@ -54,8 +54,9 @@ describe('Home page', function () {
     });
 
     it("links href'", function () {
-        return browser.elements("<a />").then(function (res) {
-             console.log("1 link elements res" + " " + res.value[0][0]);
+        return browser.elements("a").then(function (res) {
+            console.log("1 link elements res" + " " + res.value);
+            console.log('element count: ',res.value.length);
              return res.value.forEach(function (elem) {
                  console.log("2 link element" + " " + elem.value);
                  console.log("2 link element" + " " + elem[0]);
