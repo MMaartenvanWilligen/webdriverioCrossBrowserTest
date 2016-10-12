@@ -36,6 +36,7 @@ Login.prototype.constructor = Login;
  * */
 Login.prototype.inputUsernameGetValue = function () {
     return browser.getValue(this.inputUsername).then(function (value) {
+        console.log(value);
         return value;
     });
 };
@@ -50,6 +51,7 @@ Login.prototype.inputUsernameSetValue = function (inputText) {
 
 Login.prototype.inputPasswordGetValue = function () {
     return browser.getValue(this.inputPassword).then(function (value) {
+        console.log(value);
         return value;
     });
 };

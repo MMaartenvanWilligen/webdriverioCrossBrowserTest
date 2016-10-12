@@ -18,6 +18,8 @@ describe('Home page', function () {
         });
     });
 
+
+
     it("The title is 'Home Page'", function () {
         return browser.getTitle().then(function (title) {
             return assert.equal(title, "Home Page");
