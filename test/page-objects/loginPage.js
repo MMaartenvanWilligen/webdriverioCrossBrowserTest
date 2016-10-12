@@ -74,6 +74,7 @@ Login.prototype.loginProcess = function (Username, password) {
 
 Login.prototype.errorHandlingSpanDisplayed = function () {
     return browser.isVisible(this.ErrorHandlingFormSpan).then(function (bool) {
+        console.log(bool);
         return bool;
     });
 };

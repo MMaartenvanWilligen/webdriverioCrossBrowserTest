@@ -62,7 +62,7 @@ describe("Login test", function () {
 
     it("should not show texfield-errors", function () {
         return loginpage.errorHandlingSpanDisplayed().then(function (bool) {
-                return assert.equal(false, bool)
+                return assert.equal(false, bool[0])
         })
     });
 
@@ -73,6 +73,7 @@ describe("Login test", function () {
             });
         });
     });
+
 });
 
 
