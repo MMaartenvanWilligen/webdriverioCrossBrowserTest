@@ -43,12 +43,13 @@ describe('Home page', function () {
     it("links'", function () {
        return browser.elements("<a>").then(function (res) {
             console.log("link elements res" + " " + res);
-            res.value.forEach(function (elem) {
+            res.value.ELEMENT.forEach(function (elem) {
                 console.log("link element" + " " + elem);
-                browser.elementIdAttribute(elem, 'href', function (err, res) {
+                browser.getAttribute(elem, 'href', function (err, res) {
+                    console.log("link res" + " " + res);
                     console.log("link res" + " " + res.value);
-                    console.log("link err" + " " + err);
-                    return assert.equal(res.value, "BUTTONTRANSFORM");
+                    console.log("link err" + " " + err.value);
+                    return assert.equal(, "BUTTONTRANSFORM");
                 })
             });
         });
