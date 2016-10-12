@@ -41,17 +41,27 @@ describe('Home page', function () {
     });
 
     it("links'", function () {
-       return browser.elements(this.anchor).then(function (res) {
+       return browser.elements("<a>").then(function (res) {
             console.log("link elements res" + " " + res);
-            res.value.ELEMENT.forEach(function (elemID) {
+            res.value.forEach(function (elem) {
                 console.log("link element" + " " + elem);
-                browser.elementIdAttribute(elemID, 'href', function (err, res) {
-                    console.log("link res" + " " + res);
+                browser.elementIdAttribute(elem, 'href', function (err, res) {
+                    console.log("link res" + " " + res.value);
                     console.log("link err" + " " + err);
-                    return assert.equal(res, "BUTTONTRANSFORM");
+                    return assert.equal(res.value, "BUTTONTRANSFORM");
                 })
             });
         });
     });
 
 });
+
+/*
+ client.elements('<a />', function(err,res) {
+ var i = 0;
+ res.value.forEach(function(elem) {
+ client.elementIdAttribute(elem, 'href', function(err,res) {
+ console.log(++i, res.value);
+ });
+ });
+ });*/
