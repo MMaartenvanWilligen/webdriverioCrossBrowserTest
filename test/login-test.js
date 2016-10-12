@@ -73,7 +73,6 @@ describe("Login test", function () {
             });
         });
     });
-
 });
 
 

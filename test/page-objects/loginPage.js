@@ -35,7 +35,9 @@ Login.prototype.constructor = Login;
  * @return promise value username
  * */
 Login.prototype.inputUsernameGetValue = function () {
-    return browser.getValue(this.inputUsername);
+    return browser.getValue(this.inputUsername).then(function (value) {
+        return value;
+    });
 };
 
 /* @desc method set input field username
@@ -47,7 +49,9 @@ Login.prototype.inputUsernameSetValue = function (inputText) {
 };
 
 Login.prototype.inputPasswordGetValue = function () {
-    return browser.getValue(this.inputPassword);
+    return browser.getValue(this.inputPassword).then(function (value) {
+        return value;
+    });
 };
 
 Login.prototype.inputPasswordSetValue = function (inputText) {
@@ -69,7 +73,9 @@ Login.prototype.loginProcess = function (Username, password) {
 };
 
 Login.prototype.errorHandlingSpanDisplayed = function () {
-    return browser.isVisible(this.ErrorHandlingFormSpan);
+    return browser.isVisible(this.ErrorHandlingFormSpan).then(function (bool) {
+        return bool;
+    });
 };
 
 module.exports = Login;
