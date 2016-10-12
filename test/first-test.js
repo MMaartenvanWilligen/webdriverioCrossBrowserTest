@@ -40,8 +40,17 @@ describe('Home page', function () {
         });
     });
 
-    it("The title is 'Home Page'", function () {
-        return homepage.checkLinkshref();
+    it("links'", function () {
+        browser.elements(this.anchor).then(function (res) {
+            console.log(res);
+            res.value.ELEMENT.forEach(function (elemID) {
+                console.log(elem);
+                browser.elementIdAttribute(elemID, 'href', function (err, res) {
+                    console.log("link res" + " " + res);
+                    console.log("link err" + " " + err);
+                })
+            });
+        });
     });
 
 });

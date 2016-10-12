@@ -41,14 +41,18 @@ Home.prototype.ctaButtonClick = function () {
 
 Home.prototype.checkLinkshref = function () {
 
-    return browser.elements(this.nav > this.anchor).then(function (elements) {
+
+
+
+
+   /* return browser.elements(this.anchor).then(function (elements) {
         console.log(elements);
         return elements.value.forEach(function (ele) {
             return browser.elementIdAttribute(ele.ELEMENT, "href").then(function (href) {
                 return console.log(href.value)
             });
         });
-    });
+    });*/
 };
 
 /*
@@ -57,3 +61,12 @@ Home.prototype.checkLinkshref = function () {
 
 module.exports = Home;
 
+/*
+client.elements('<a />', function(err,res) {
+    var i = 0;
+    res.value.forEach(function(elem) {
+        client.elementIdAttribute(elem, 'href', function(err,res) {
+            console.log(++i, res.value);
+        });
+    });
+});*/
