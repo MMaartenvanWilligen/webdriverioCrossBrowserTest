@@ -58,9 +58,8 @@ describe('Home page', function () {
             console.log("1 link elements res" + " " + res.value);
             console.log('element count: ',res.value.length);
              return res.value.forEach(function (elem) {
-                 console.log("2 link element" + " " + elem.value);
-                 console.log("2 link element" + " " + elem[0]);
-                 return browser.elementIdAttribute(elem, 'href', function (err, res) {
+                 console.log("2 link element" + " " + elem);
+                 browser.elementIdAttribute(elem.ELEMENT, 'href', function (err, res) {
                      console.log("3 link res" + " " + res);
                      console.log("3 link res" + " " + res.value);
                      console.log("3 link err" + " " + err.value);
