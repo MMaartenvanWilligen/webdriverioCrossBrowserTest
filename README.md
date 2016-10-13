@@ -1,6 +1,6 @@
 # Demo front-end website test
 
-<b>Samenvatting<b/>
+#### Samenvatting
 
 In deze demo een demonstratie van hoe een front-end test kan worden opgezet. Kleine javascript tests geschreven voor een eenvoudige website. De test omgeving is ingericht met het oog op continuous delivery. De volgende tools zijn gebruikt voor het opzetten van de omgeving en tests.
 
@@ -13,7 +13,7 @@ In deze demo een demonstratie van hoe een front-end test kan worden opgezet. Kle
 
 De demo laat zien hoe de verschillende tools met elkaar kunnen samenwerken voor de opzet van een goede testomgeving. Een testomgeving waar tests in parallel en op verschillende browsers kunnen worden uitgevoerd, rekening wordt gehouden met continuous delivery,  en de test in javascript kunnen worden geschreven. Om de test scripts overzichtelijk en schaalbaar te houden is in dit project ook te zien hoe het page object pattern kan worden gebruikt. Lees verder en analyseer de comments voor meer uitleg. 
 
-<b>De testomgeving<b/>
+#### De testomgeving
 
 Travis heeft verschillende hooks die inhaken op verschillende github commands. Bijvoorbeeld wanneer er een push wordt uitgevoerd naar een github repository.Travis kan aan deze push een actie aan koppelen. In dit project start travis na een push command een virtual machine. Deze virtual machine zet vervolgens het verdere test proces in gang. (Voor het instellen van hooks moet je wel eerst je travis met github repository synchroniseren. Dit kan eenvoudig gedaan worden op je travis account.)
 
@@ -29,6 +29,6 @@ Sauce Labs is een automated testing cloud met heel veel browsers, platformen en 
 
 Mocha is een javascript framework voor testing. Met mocha worden de tests leesbarder en kunnen testresultaten eenvoudig worden afgehandeld. Het is een promise aware framework en dat maakt het makkelijk om ook asynchrone website test uit te voeren. Hier wordt nadrukelijk gebruik van gemaakt in deze demo.
 
-<b>Links<b/>
+#### Links
 
 travis van project: https://travis-ci.org/MMaartenvanWilligen/webdriverioCrossBrowserTest
