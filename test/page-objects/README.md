@@ -1,0 +1,3 @@
+<b>Page Object Pattern<b/>
+
+Het Page Object pattern fungeert als schakel tussen de dom elementen van een website en de test scripts. Een page object lokaliseert alle benodigde elementen op de pagina en kunnen vervolgens door de tests worden aangesproken. Wanneer er dan een element verandert hoef je deze niet in alle tests aan te passen en opnieuw te lokaliseren maar hoef je dit alleen maar in het page object te doen. Dit helpt je tests schaalbaar te maken. 

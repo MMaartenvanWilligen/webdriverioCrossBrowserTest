@@ -28,3 +28,7 @@ Webdriverio is een schakel tussen selenium en nodejs. Met webdriverio kan je bro
 Sauce Labs is een automated testing cloud met heel veel browsers, platformen en operating systems waarop getest kan worden. Het zelf opzetten en bijhouden van browser en platformen op je virtual machine is erg tijdsintensief. Daarnaast kan je op het account van Sauce Labs uitgevoerde tests terugkijken in video. Nog een groot voordeel van Sauce Labs is dat lokaal draaiende websites ook kunnen worden bereikt via de sauce tunnel. In dit project is ook gebruik gemaakt van deze tunnel om de lokaal draaiende website http://localhost:4445/webdriverioProject/website/index.html te kunnen testen.
 
 Mocha is een javascript framework voor testing. Met mocha worden de tests leesbarder en kunnen testresultaten eenvoudig worden afgehandeld. Het is een promise aware framework en dat maakt het makkelijk om ook asynchrone website test uit te voeren. Hier wordt nadrukelijk gebruik van gemaakt in deze demo.
+
+<b>Links<b/>
+
+travis van project: https://travis-ci.org/MMaartenvanWilligen/webdriverioCrossBrowserTest
