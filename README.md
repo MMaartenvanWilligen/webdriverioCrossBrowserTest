@@ -17,8 +17,10 @@ De demo laat zien hoe de verschillende tools met elkaar kunnen samenwerken voor 
 
 #### Lees uitleg
 
-Lees eerst de [uitleg](##Uitleg) voor meer informatie over deze demo. 
+Lees de [uitleg](#Uitleg) voor meer informatie over deze demo.
+ 
 #### Accounts aanmaken
+Maak een account aan voor Travis en Sauce Labs
 
 Sauce Labs Account: https://saucelabs.com/ <br>
 Travis Account: https://travis-ci.com/
