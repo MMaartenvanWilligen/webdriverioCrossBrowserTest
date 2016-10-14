@@ -43,23 +43,46 @@ Het Page Object pattern fungeert als schakel tussen de dom elementen van een web
 
 #### Accounts aanmaken
 
-Sauce Labs Account: https://saucelabs.com/
+Sauce Labs Account: https://saucelabs.com/ <br>
 Travis Account: https://travis-ci.com/
 
 #### Fork en clone project
-Op GitHub, navigeer naar de MMaartenvanWilligen/webdriverioCrossBrowserTest/ repository.
+Op GitHub, navigeer naar de MMaartenvanWilligen/webdriverioCrossBrowserTest/ repository. <br>
+
 klik rechtsboven op de fork button
+
 Maak een lokale clone van de fork
 
 ``` command
-$ git clone https://github.com/YOUR-USERNAME/webdriverioCrossBrowserTest
+git clone https://github.com/YOUR-USERNAME/webdriverioCrossBrowserTest
 ```
 
+#### Synchroniseer travis met github repository
+
+Op het aangemaakte travis account moet github worden gesynchroniseerd met Travis. Dit kan hier: https://travis-ci.org/profile/YOUR_USERNAME.
+
+klik rechtsboven op de sync knop
+schuif de switch van de repository van dit project op aan
+
+#### Aanpassen account variabelen
+
+Om de test te kunnen draaien moeten er een aantal waardes worden veranderd in de code.
+
+Vul in het bestand van travis.yml uw eigen username en accesskey in . De acceskey is te vinden onder het kopje Tunnels op uw Sauce Labs account.
+
+``` yml
+addons:
+ sauce_connect:
+   username: “SAUCE_USERNAME”
+   access_key: “SAUCE_ACCESS_KEY”
+```
 #### Laat website lokaal draaien
 
-#### Pas variabelen aan
+In de repository is een eenvoudige website bijgevoegd (webdriverioCrossBrowserTest/website/). De tests suites zijn gemaakt voor deze website. De website moet lokaal draaien op port 8000, zodat de sauce labs tunnel de lokaal draaiende website kan bereiken. 
 
 #### Start test
+
+Nu is alles gereed voor gebruik. 
 
 ##license
 
