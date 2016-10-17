@@ -2,25 +2,24 @@
 
 #### Samenvatting
 
-In deze demo een demonstratie van hoe een front-end test kan worden opgezet. Kleine javascript tests geschreven voor een eenvoudige website. De test omgeving is ingericht met het oog op continuous delivery. De volgende tools zijn gebruikt voor het opzetten van de omgeving en tests.
+In deze github repository een demonstratie van een front-end test omgeving en daarbij horende tests. Kleine javascript tests geschreven voor een eenvoudige website. De test omgeving is ingericht met het oog op continuous delivery. De volgende tools zijn gebruikt voor het opzetten van de omgeving en tests.
 
 - Github
-- Travis CI https://saucelabs.com
+- Travis CI
 - Node	https://nodejs.org/en/
 - Webdriverio (Browser automation) http://webdriver.io/
 - Saucelabs (automated testing cloud for web and mobile apps.) https://saucelabs.com
 - Mocha (Javascript test framework) https://mochajs.org/
 
-De demo laat zien hoe de verschillende tools met elkaar kunnen samenwerken voor de opzet van een goede testomgeving. Een testomgeving waar tests in parallel en op verschillende browsers kunnen worden uitgevoerd, rekening wordt gehouden met continuous delivery en de test in javascript kunnen worden geschreven. Om de test scripts overzichtelijk en schaalbaar te houden is in dit project ook te zien hoe het page object pattern kan worden gebruikt. Lees verder en analyseer de comments voor meer uitleg. 
+De demo laat zien hoe de verschillende tools met elkaar kunnen samenwerken voor de vorming van een goede testomgeving. Een testomgeving waar tests in parallel en op verschillende browsers kunnen worden uitgevoerd, rekening wordt gehouden met continuous delivery en de test in javascript kunnen worden geschreven. Om de test scripts overzichtelijk en schaalbaar te houden is in dit project ook te zien hoe het page object pattern kan worden gebruikt. Start hieronder een test met behulp van deze demo en lees verder voor meer informatie.
 
 ## Getting Started
 
 #### Lees uitleg
 
-Lees de [uitleg](#uitleg) voor meer informatie over deze demo.
- 
+Lees eerst de [uitleg](#Uitleg) voor meer informatie over deze demo. 
+
 #### Accounts aanmaken
-Maak een account aan voor Travis en Sauce Labs
 
 Sauce Labs Account: https://saucelabs.com/ <br>
 Travis Account: https://travis-ci.com/
@@ -43,7 +42,7 @@ schuif de switch van de repository van dit project op aan
 
 Om de test te kunnen draaien moeten er een aantal waardes worden veranderd in de code.
 
-Vul in het bestand van travis.yml uw eigen username en accesskey in . De acceskey is te vinden onder het kopje Tunnels op uw Sauce Labs account.
+Vul in het bestand van travis.yml uw eigen username en accesskey in. De accesskey is te vinden onder het kopje Tunnels op uw Sauce Labs account.
 
 ``` yml
 addons:
@@ -57,18 +56,17 @@ In de repository is een eenvoudige website bijgevoegd (webdriverioCrossBrowserTe
 
 #### Start test
 
-Nu is alles gereed voor gebruik. Maak een push naar de repository en bekijk het resultaat op je Travis en Sauce Labs Account.
+
+Alles is nu gereed voor gebruik. Maak een push naar de repository en bekijk het resultaat op je Travis en Sauce Labs Account.
 
 ``` command
-$ git push origin
+$ git push  origin
 ```
-
-
 ## Uitleg
 
 #### De testomgeving
 
-Travis heeft verschillende hooks die inhaken op github commands. Bijvoorbeeld wanneer er een push wordt uitgevoerd naar een github repository.Travis kan dan aan deze push een actie koppelen met een hook. In dit project start travis na een push command een virtual machine. Deze virtual machine zet vervolgens het verdere test proces in gang. (Voor het instellen van hooks moet je wel eerst je travis met github repository synchroniseren. Dit kan eenvoudig gedaan worden op je travis account.)
+Travis heeft verschillende hooks die inhaken op github commands. Bijvoorbeeld wanneer er een push wordt uitgevoerd naar een github repository. Travis kan dan aan deze push een actie koppelen met een hook. In dit project start travis na een push command een virtual machine. Deze virtual machine zet vervolgens het verdere test proces in gang. (Voor het instellen van hooks moet je wel eerst je travis met github repository synchroniseren. Dit kan eenvoudig gedaan worden op je travis account.)
 
 Met het bestand travis.yml kan je travis vertellen welke scripts het moet uitvoeren en hoe de virtual machine moet worden ingericht. In dit project wordt daar onder andere node geïnstalleerd en geïnitialiseerd. Daarna wordt er een tunnel connectie opgezet met Sauce Labs met behulp van een username en accesskey van sauce labs. De documentatie voor het opzetten van die connectie staat hier: https://docs.travis-ci.com/user/sauce-connect/. Deze tunnel is nodig om Sauce Labs toegang te verlenen aan lokaal draaiende websites. 
 
@@ -86,12 +84,11 @@ Mocha is een javascript framework voor testing. Met mocha worden de tests leesba
 
 Het Page Object pattern fungeert als schakel tussen de dom elementen van een website en de test scripts. Een page object lokaliseert alle benodigde elementen op de pagina en de tests kunnen vervolgens deze elementen aanspreken via dit object. Wanneer er een element verandert in de Dom hoeft dit alleen aangepast te worden in het page object. Dit helpt je tests schaalbaar te houden. 
 
-
 #### Links
 
 travis van project: https://travis-ci.org/MMaartenvanWilligen/webdriverioCrossBrowserTest
 
 ##license
 
-
+MIT
 
