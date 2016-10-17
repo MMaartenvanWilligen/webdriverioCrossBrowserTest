@@ -53,22 +53,22 @@ describe('Home page', function () {
     //     });
     // });
 
-    it("links href'", function () {
-        return browser.elements("<a />").then(function (res) {
-            console.log("1 link elements res" + " " + res.value);
-            console.log('a elements on page: ', res.value.length);
-            return res.value.forEach(function (elem) {
-                console.log("2 link element" + " " + elem);
-                browser.elementIdAttribute(elem, 'href').then(function (err, res) {
-                    console.log("3 link res" + " " + res);
-                    console.log("3 link res" + " " + res.value);
-                    console.log("3 link err" + " " + err.value);
-                    hrefString = res;
-                    // return hrefString.should.be.empty;
-                });
-            });
-        });
-    });
+    // it("links href'", function () {
+    //     return browser.elements("<a />").then(function (res) {
+    //         console.log("1 link elements res" + " " + res.value);
+    //         console.log('a elements on page: ', res.value.length);
+    //         return res.value.forEach(function (elem) {
+    //             console.log("2 link element" + " " + elem);
+    //             browser.elementIdAttribute(elem, 'href').then(function (err, res) {
+    //                 console.log("3 link res" + " " + res);
+    //                 console.log("3 link res" + " " + res.value);
+    //                 console.log("3 link err" + " " + err.value);
+    //                 hrefString = res;
+    //                 // return hrefString.should.be.empty;
+    //             });
+    //         });
+    //     });
+    // });
 
 });
 
