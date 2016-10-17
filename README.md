@@ -17,7 +17,7 @@ De demo laat zien hoe de verschillende tools met elkaar kunnen samenwerken voor 
 
 #### Lees uitleg
 
-Lees de [uitleg](#Uitleg) voor meer informatie over deze demo.
+Lees de [uitleg](#uitleg) voor meer informatie over deze demo.
  
 #### Accounts aanmaken
 Maak een account aan voor Travis en Sauce Labs
@@ -56,7 +56,6 @@ addons:
 In de repository is een eenvoudige website bijgevoegd (webdriverioCrossBrowserTest/website/). De tests suites zijn gemaakt voor deze website. De website moet lokaal draaien op port 8000, zodat de sauce labs tunnel de lokaal draaiende website kan bereiken. 
 
 #### Start test
-
 
 Nu is alles gereed voor gebruik. Maak een push naar de repository en bekijk het resultaat op je Travis en Sauce Labs Account.
 
