@@ -90,5 +90,5 @@ travis van project: https://travis-ci.org/MMaartenvanWilligen/webdriverioCrossBr
 
 ##license
 
-MIT
+MIT change
 
