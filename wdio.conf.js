@@ -21,15 +21,6 @@ exports.config = {
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,     //suacelabs tunnel set up by travis. for saucelabs integration
         build: process.env.TRAVIS_BUILD_NUMBER                  //travis build number. for saucelabs integration
     }, {
-        browserName: 'firefox',
-        version: 'latest',
-        platform: 'Windows 10',
-        tags: ['examples'],
-        name: 'firefox test',
-        'public': true,
-        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,     //suacelabs tunnel set up by travis. for Saucelabs integration
-        build: process.env.TRAVIS_BUILD_NUMBER                  //travis build number. for saucelabs integration
-    }, {
         browserName: 'internet explorer',
         version: 'latest',
         platform: 'Windows 10',
