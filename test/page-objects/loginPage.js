@@ -36,7 +36,6 @@ Login.prototype.constructor = Login;
  * */
 Login.prototype.inputUsernameGetValue = function () {
     return browser.getValue(this.inputUsername).then(function (value) {
-        console.log(value);
         return value;
     });
 };
@@ -51,7 +50,6 @@ Login.prototype.inputUsernameSetValue = function (inputText) {
 
 Login.prototype.inputPasswordGetValue = function () {
     return browser.getValue(this.inputPassword).then(function (value) {
-        console.log(value);
         return value;
     });
 };
@@ -61,22 +59,18 @@ Login.prototype.inputPasswordSetValue = function (inputText) {
 };
 
 Login.prototype.submitClick = function () {
-
     return browser.click(this.submitButton);
 };
 
 Login.prototype.loginProcess = function (Username, password) {
-
     this.inputUsernameSetValue(Username);
     this.inputPasswordSetValue(password);
     this.submitClick().then(function () {
-
     });
 };
 
 Login.prototype.errorHandlingSpanDisplayed = function () {
     return browser.isVisible(this.ErrorHandlingFormSpan).then(function (bool) {
-        console.log(bool);
         return bool;
     });
 };
