@@ -60,7 +60,7 @@ In de repository is een eenvoudige website bijgevoegd (webdriverioCrossBrowserTe
 Alles is nu gereed voor gebruik. Maak een push naar de repository en bekijk het resultaat op je Travis en Sauce Labs Account.
 
 ``` command
-$ git push  origin
+$ git push origin
 ```
 ## Uitleg
 
